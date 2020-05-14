@@ -18,14 +18,20 @@ export const createUserProfileDocument = async(userAuth, additionalData) => {
         return;
     }
 
+    // We query from database for Document reference object based on userAuth Object
     const userRef = firestore.doc(`users/${userAuth.uid}`);
+    //Using the UserReference, we call the get() to take the Snapshot Object 
     const snapShot = await userRef.get();
-
+    
+    // Even if we don't have actual User Object in database, firestore would give us a snapshot object 
+    // and we check if exists or not.
+    // if does not exist...
     if(!snapShot.exists)
     {
         const {displayName, email} = userAuth;
         const createdAt = new Date();
         try{
+            // create a new Document Object inside of UserRef and database, using the set()
             await userRef.set({displayName, email, createdAt, ...additionalData})
         }
         catch(error){
@@ -37,6 +43,32 @@ export const createUserProfileDocument = async(userAuth, additionalData) => {
 };
 
 
+
+export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => {
+    const collectionRef = firestore.collection(collectionKey);
+    const batch = firestore.batch();
+    objectsToAdd.forEach(obj => {
+        const newDocRef = collectionRef.doc();
+        batch.set(newDocRef, obj);
+    });
+    return await batch.commit();
+};
+
+export const convertCollectionsSnapshotToMap = (collections) => {
+    const transformedCollection = collections.docs.map(doc => {
+        const {title, items} = doc.data();
+        return {
+            routeName: encodeURI(title.toLowerCase()),
+            id: doc.id,
+            title,
+            items
+        }
+    });
+    return transformedCollection.reduce((accumulator, collection) => {
+        accumulator[collection.title.toLowerCase()] = collection; 
+        return accumulator;
+    }, {});
+};
 
 firebase.initializeApp(config);
 

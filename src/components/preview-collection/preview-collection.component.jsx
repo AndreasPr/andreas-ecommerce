@@ -3,6 +3,7 @@ import React from 'react';
 import CollectionItem from '../collection-item/collection-item.component';
 import {CollectionPreviewContainer, CollectionPreviewTitle, CollectionPreviewMain} from './preview-collection.styles';
 
+// Tip:  => () is an implicit return equivalent to => { return () }
 const PreviewCollection = ({title, items}) => (
     <CollectionPreviewContainer>
          <CollectionPreviewTitle>{title.toUpperCase()}</CollectionPreviewTitle>
@@ -10,7 +11,7 @@ const PreviewCollection = ({title, items}) => (
             {
                 items
                 .filter((item, idx) => idx < 4)
-                .map((item) => (
+                .map(item => (
                     <CollectionItem key={item.id} item={item} />
                 ))
             }

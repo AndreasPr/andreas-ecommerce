@@ -14,16 +14,16 @@ import {createStructuredSelector} from 'reselect';
 import CheckoutPage from './pages/checkout/checkout.component';
 
 class App extends React.Component {
-
+ 
+  //Observer Pattern
   unsubscribeFromAuth = null;
-
+  
   componentDidMount(){
+    const {setCurrentUser} = this.props;
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
-      const {setCurrentUser} = this.props;
       if(userAuth)
       {
         const userRef = await createUserProfileDocument(userAuth);
-
         userRef.onSnapshot(snapShot => {
           setCurrentUser({
               id: snapShot.id,
@@ -34,8 +34,8 @@ class App extends React.Component {
       else{
         setCurrentUser(userAuth);
       }
-     
-    })
+    });
+    
   }
 
   componentWillUnmount(){
@@ -60,7 +60,7 @@ class App extends React.Component {
 }
 
 const mapStateToProps = createStructuredSelector ({
-  currentUser: selectCurrentUser
+  currentUser: selectCurrentUser,
 });
 
 const mapDispatchToProps = dispatch => ({
