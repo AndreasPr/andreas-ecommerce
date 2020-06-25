@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const path = require('path');
+const compression = require('compression');
 
 if(process.env.NODE_ENV !== 'production'){
     require('dotenv').config();
@@ -14,6 +15,7 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY); // Finally, it 
 
 const app = express(); // express: library that allows us to build an API server easily
 const port = process.env.PORT || 5000;
+app.use(compression());
 app.use(bodyParser.json()); // any of the requests coming in, process their body and convert it to JSON. Step done for us using the body parser middleware
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors()); // Stand for: cross origin request. The web server is being hosted from some origin(like a port ex. 5000 in development), our application
