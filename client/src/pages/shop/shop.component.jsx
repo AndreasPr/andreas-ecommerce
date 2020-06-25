@@ -1,9 +1,14 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, lazy, Suspense} from 'react';
 import {Route} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {fetchCollectionsStart} from '../../redux/shop/shop.actions';
-import CollectionsOverviewContainer from '../../components/collections-overview/collections-overview.container';
-import CollectionPageContainer from '../collection/collection.container';
+import Spinner from '../../components/spinner/spinner.component';
+// import CollectionsOverviewContainer from '../../components/collections-overview/collections-overview.container';
+// import CollectionPageContainer from '../collection/collection.container';
+
+const CollectionsOverviewContainer = lazy(() => import('../../components/collections-overview/collections-overview.container'));
+const CollectionPageContainer = lazy(() => import('../collection/collection.container'));
+
 
 const ShopPage = ({fetchCollectionsStart, match}) => {
 
@@ -14,10 +19,12 @@ const ShopPage = ({fetchCollectionsStart, match}) => {
 
         return(
             <div className='shop-page'>
-                <Route exact path={`${match.path}`} 
-                component={CollectionsOverviewContainer} />
-                <Route path={`${match.path}/:collectionId`} 
-                component={CollectionPageContainer} />
+                <Suspense fallback={<Spinner/>}>
+                    <Route exact path={`${match.path}`} 
+                    component={CollectionsOverviewContainer} />
+                    <Route path={`${match.path}/:collectionId`} 
+                    component={CollectionPageContainer} />
+                </Suspense>
             
             {/* When you use the component props, the router uses React.createElement to create a new React element
             from the given component. That means if you provide an inline function to the component attribute, you 
