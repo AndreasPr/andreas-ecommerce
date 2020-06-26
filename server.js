@@ -16,14 +16,15 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY); // Finally, it 
 
 const app = express(); // express: library that allows us to build an API server easily
 const port = process.env.PORT || 5000;
-app.use(compression());
+
 app.use(bodyParser.json()); // any of the requests coming in, process their body and convert it to JSON. Step done for us using the body parser middleware
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(enforce.HTTPS({trustProtoHeader: true}));
 app.use(cors()); // Stand for: cross origin request. The web server is being hosted from some origin(like a port ex. 5000 in development), our application
 // is hosted to 3000. When the front end makes a request to our backend, cors checks to make sure the origin is the same, 
 // otherwise it denies the request, so it is a safety feature 
 if(process.env.NODE_ENV === 'production'){
+    app.use(compression());
+    app.use(enforce.HTTPS({trustProtoHeader: true}));
     app.use(express.static(path.join(__dirname, 'client/build')));
     app.get('*', function(request, response){
         response.sendFile(path.join(__dirname, 'client/build', 'index.html'))
