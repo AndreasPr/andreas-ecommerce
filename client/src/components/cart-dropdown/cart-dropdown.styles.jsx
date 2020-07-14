@@ -10,7 +10,7 @@ export const CartdropdownContainer = styled.div`
     padding: 20px;
     border: 1px solid black;
     background-color: white;
-    top: 90px;
+    top: 50px;
     right: 40px;
     z-index: 5;
 `;
@@ -19,7 +19,7 @@ export const CartitemsStyles = styled.div`
     height: 240px;
     display: flex;
     flex-direction: column;
-    overflow: scroll;
+    overflow: auto;
 `;
 
 export const EmptymessageStyles = styled.span`
@@ -29,4 +29,18 @@ export const EmptymessageStyles = styled.span`
 
 export const CheckoutButtonStyles = styled(CustomButton)`
     margin-top: auto;
+`;
+
+export const CheckoutPageTotal = styled.div`
+    border-top: 1px solid #e5e5e5;
+    padding-top: 15px;
+    padding-bottom: 15px;
+`;
+export const CheckoutTotal = styled.span`
+    float: left;
+    color: #e7ab3c;
+`;
+export const CheckoutTotalPrice = styled.span`
+    float: right;
+    color: #e7ab3c;
 `;

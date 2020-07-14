@@ -42,7 +42,14 @@ export const createUserProfileDocument = async(userAuth, additionalData) => {
     return userRef;
 };
 
-
+export const addContactInfo = async (infoToAdd) => {
+    try{
+        const contactRef = firestore.collection("contact").doc();
+        await contactRef.set(infoToAdd);
+    }catch(error){
+        console.log("Error creating the data in contact: ", error.message);
+    }
+};
 
 export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => {
     const collectionRef = firestore.collection(collectionKey);
@@ -69,7 +76,6 @@ export const convertCollectionsSnapshotToMap = (collections) => {
         return accumulator;
     }, {});
 };
-
 
 export const getCurrentUser = () => {
     return new Promise((resolve, reject) => {

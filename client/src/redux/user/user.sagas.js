@@ -52,6 +52,9 @@ export function* signOut(){
         yield put(signOutFailure(error));
     }
 };
+
+
+
 export function* signUp({payload: {displayName, email, password}}){
     try{
         const {user} = yield auth.createUserWithEmailAndPassword(email, password);
@@ -63,6 +66,9 @@ export function* signUp({payload: {displayName, email, password}}){
 export function* signInAfterSignUp({payload: {user, additionalData}}){
     yield getSnapshotFromUserAuth(user, additionalData);
 };
+
+
+
 
 
 export function* onCheckUserSession(){

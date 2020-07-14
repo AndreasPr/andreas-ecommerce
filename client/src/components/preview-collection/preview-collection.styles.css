@@ -1,0 +1,32 @@
+.previewCollectionInfo{
+    padding-bottom: 4%;
+}
+@media screen and (max-width: 894px){
+    .previewCollectionInfo{
+        padding-bottom: 8%;
+    }
+}
+.collectionContainer{
+    padding-top: 70px;
+}
+@media screen and (max-width: 580px){
+    .collectionContainer{
+        padding-top: 10%;
+    }
+}
+.headingCollection{
+    padding-left: 0px;
+    margin-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 30px;
+}
+.heading-collection{
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #e7ab3c;
+    width: 30%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

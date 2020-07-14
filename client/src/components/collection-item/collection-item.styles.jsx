@@ -75,5 +75,5 @@ export const NameStyles = styled.span`
 `;
 
 export const PriceStyles = styled.span`
-    idth: 10%;
+    width: 10%;
 `;

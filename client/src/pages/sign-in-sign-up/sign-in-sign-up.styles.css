@@ -1,0 +1,29 @@
+.containerSignInSignUp{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    width: 100%;
+}
+/* @media screen and (max-width: 991px) and (min-width: 576px){
+    .containerSignInSignUp{
+        margin: auto;
+        width: 50%;
+    }
+}
+@media screen and (max-width: 576px){
+    .containerSignInSignUp{
+        margin-left: 15%;
+    }
+} */
+.containerSignIn{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.containerSignUp{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+@media screen and (max-width: 991px){
+    .containerSignUp{
+        padding-top: 60px;
+    }
+}

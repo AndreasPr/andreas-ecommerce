@@ -1,0 +1,52 @@
+footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    display: block;
+    padding: 0px 0px !important;
+}
+.logo{
+    width: 100px;
+    height: 100px;
+}
+input[type=text]:focus{
+    box-shadow: inset 0 -1px 0 rgb(221, 221, 221);
+}
+.logoForFooter{
+    background-color: #303030;
+}
+.infoForFooter{
+    background-color: #191919;
+    color: #b2b2b2;
+    border-top: 1px solid #303030;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.copyright-reserved{
+    background-color: #191919;
+    color: #b2b2b2;
+    border-top: 1px solid #303030;
+    padding: 15px 0;
+    display: block;
+}
+.armourLogo{
+    padding: 20px 0px 20px 0px;
+}
+.coachLogo{
+    padding: 20px 0px 20px 0px;
+}
+.gapLogo{
+    padding: 20px 0px 20px 0px;
+}
+.hilfigerLogo{
+    padding: 20px 0px 20px 0px;
+}
+.listOfFooter{
+    list-style-type:none;
+    padding: 0;
+}
+.headingFooter{
+    color: white;
+    padding-top: 6%;
+    padding-bottom: 5%;
+}

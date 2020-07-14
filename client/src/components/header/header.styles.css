@@ -1,0 +1,22 @@
+nav{
+    background: #303030;
+}
+.navbar{
+    padding-bottom: 0px;
+    padding-top: 0px;
+    font-weight: 600;
+}
+.nav-item > li.active{
+    color: white;
+}
+.navbar-brand{
+    margin-left: 170px;
+}
+@media screen and (max-width: 768px){
+    .navbar-brand{
+        margin-left: 0px;
+    }
+}
+.listOfMenu{
+    margin-right: 103px;
+}

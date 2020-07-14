@@ -3,8 +3,10 @@ import {Switch, Route, Redirect} from 'react-router-dom';
 import {GlobalStyle} from './global.styles';
 import ErrorBoundary from './components/error-boundary/error-boundary.component';
 
+import TopNav from './components/top-nav/top-nav.component';
 import Header from './components/header/header.component';
 import Spinner from './components/spinner/spinner.component';
+import Footer from './components/footer/footer.component';
 
 
 import {connect} from 'react-redux';
@@ -16,6 +18,7 @@ import {checkUserSession} from './redux/user/user.actions';
 //Code Splitting - React Lazy and Suspense - Different chunks for every import, so we improved performance
 const Homepage = lazy(() => import('./pages/homepage/homepage.component'));
 const ShopPage = lazy(() => import('./pages/shop/shop.component'));
+const Contact = lazy(() => import('./pages/contact/contact.component'));
 const SignInAndSignUpPage = lazy(() => import('./pages/sign-in-sign-up/sign-in-sign-up.component'));
 const CheckoutPage = lazy(() => import('./pages/checkout/checkout.component'));
 
@@ -31,18 +34,21 @@ const App = ({checkUserSession, currentUser}) => {
     return (
       <div>
         <GlobalStyle/>
+        <TopNav />
         <Header />
         <Switch>
           <ErrorBoundary>
             <Suspense fallback={<Spinner />}>
               <Route exact path='/' component={Homepage} />
               <Route path='/shop' component={ShopPage} />
+              <Route exact path='/contact' component={Contact} />
               <Route exact path='/checkout' component={CheckoutPage} />
               <Route exact path='/signin' 
               render = {() => currentUser ? (<Redirect to='/' />) : (<SignInAndSignUpPage/>) } />
             </Suspense>
           </ErrorBoundary>
         </Switch>
+        <Footer />
       </div>
     ); 
 };
