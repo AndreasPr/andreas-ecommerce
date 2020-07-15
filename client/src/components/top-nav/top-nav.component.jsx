@@ -42,7 +42,7 @@ const TopNav = ({hidden}) => (
                     </div>
                 </div>
 
-                <div className="col-2 col-sm-2 col-md-1 col-lg-1 col-xl-1 text-left cart-icon">
+                <div className="col-1 col-sm-2 col-md-1 col-lg-1 col-xl-1 text-left cart-icon">
                     <CartIcon />   
 
                     {

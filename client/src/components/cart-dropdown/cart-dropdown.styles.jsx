@@ -13,6 +13,10 @@ export const CartdropdownContainer = styled.div`
     top: 50px;
     right: 40px;
     z-index: 5;
+
+    @media (max-width: 450px) and (min-width: 350px) {
+        width: 250px;
+    }
 `;
 
 export const CartitemsStyles = styled.div`
@@ -29,6 +33,9 @@ export const EmptymessageStyles = styled.span`
 
 export const CheckoutButtonStyles = styled(CustomButton)`
     margin-top: auto;
+    @media (max-width: 450px) and (min-width: 350px) {
+        font-size: 12px;
+    }
 `;
 
 export const CheckoutPageTotal = styled.div`
