@@ -24,6 +24,9 @@ export const CartitemsStyles = styled.div`
     display: flex;
     flex-direction: column;
     overflow: auto;
+    @media (max-width: 450px) and (min-width: 350px) {
+        overflow: scroll;
+    }
 `;
 
 export const EmptymessageStyles = styled.span`
