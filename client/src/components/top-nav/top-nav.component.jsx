@@ -20,7 +20,7 @@ const TopNav = ({hidden}) => (
 
 
                 <div className="col-4 col-sm-4 col-md-3 mr-md-auto col-lg-3 mr-lg-auto col-xl-3 mr-xl-auto text-left telephone"> 
-                    <i className="fas fa-phone-volume"></i> +1234567890
+                    <i className="fas fa-phone-volume"></i><a className="telephoneLink" href="tel:123-456-7890">+1234567890</a>
                 </div>
 
 

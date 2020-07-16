@@ -16,6 +16,10 @@
     margin-top: auto;
     padding-right: 0px;
 }
+a:hover{
+    text-decoration: none;
+    color: inherit;
+}
 .fa-envelope{
     font-size: 20px;
 }
