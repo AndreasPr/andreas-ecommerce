@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import './footer.styles.css';
 import mainLogo  from '../../assets/andreas.png';
 import {ReactComponent as ArmourLogo}  from '../../assets/armour-logo.svg';
@@ -33,17 +34,17 @@ const Footer = () => (
                 <div className="col-sm-12 col-md-12 col-lg-6 col-xl-2 ml-xl-auto">
                     <h3 className="headingFooter">Information</h3>
                     <ul className="listOfFooter">
-                        <li>About us</li>
-                        <li>Shop</li>
-                        <li>Contact Us</li>
+                        <li><Link to='/about'>About us</Link></li>
+                        <li><Link to='/shop'>Shop</Link></li>
+                        <li><Link to='/checkout'>Checkout</Link></li>
                     </ul>
                 </div>
                 <div className="col-sm-12 col-md-12 col-lg-6 col-xl-2 ml-xl-auto">
-                    <h3 className="headingFooter">My Account</h3>
+                    <h3 className="headingFooter">Account</h3>
                     <ul className="listOfFooter">
-                        <li>My Account</li>
-                        <li>Contact</li>
-                        <li>Checkout</li>
+                        <li><Link to='/signin'>Sign Up</Link></li>
+                        <li><Link to='/signin'>Login</Link></li>
+                        <li><Link to='/contact'>Contact Us</Link></li>
                     </ul>
                 </div>
                 <div className="col-sm-12 col-md-12 col-lg-6 col-xl-2 mr-xl-auto">

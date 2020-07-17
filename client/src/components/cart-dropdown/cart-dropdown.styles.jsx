@@ -25,7 +25,9 @@ export const CartitemsStyles = styled.div`
     flex-direction: column;
     overflow: auto;
     @media (max-width: 450px) and (min-width: 350px) {
-        overflow: scroll;
+        overflow-x: hidden; 
+        overflow-y: scroll; 
+        -webkit-overflow-scrolling: touch;
     }
 `;
 
