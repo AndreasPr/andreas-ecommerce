@@ -21,11 +21,8 @@ const CollectionItem = ({item, addItem}) => {
         // </CollectionItemContainer>
         <div className="containerStyle">
                 <img src={imageUrl} alt="collectionItem" className="image" />
-                
-                {/* <div className="footerContainer"> */}
                     <div className="nameOfProduct">{name}</div>
                     <div className="priceOfProduct">${price}</div>
-                {/* </div> */}
                 <CustomButton className="customButton" inverted onClick={() => addItem(item)}>ADD TO CART</CustomButton>
                 
         </div>

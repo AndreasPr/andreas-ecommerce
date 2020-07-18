@@ -25,8 +25,11 @@ export const CartitemsStyles = styled.div`
     flex-direction: column;
     overflow: auto;
     @media (max-width: 450px) and (min-width: 350px) {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
+        height: 230px;
+        max-height: 230px;
+        width: 100%;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch; // mobile safari
     }
 `;
 

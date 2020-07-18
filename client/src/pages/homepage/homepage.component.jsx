@@ -9,7 +9,7 @@ const Homepage = () => (
             console.log({
                 id, phase, actualDuration
             });
-        }}>
+        }}>            
             <Directory />
         </Profiler>
     </HomePageContainer>
