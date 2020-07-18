@@ -15,7 +15,11 @@ export const CartdropdownContainer = styled.div`
     z-index: 5;
 
     @media (max-width: 450px) and (min-width: 350px) {
-        width: 250px;
+        height: 250px;
+        max-height: 250px;
+        width: 100%;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch; // mobile safari
     }
 `;
 
@@ -24,13 +28,7 @@ export const CartitemsStyles = styled.div`
     display: flex;
     flex-direction: column;
     overflow: auto;
-    @media (max-width: 450px) and (min-width: 350px) {
-        height: 230px;
-        max-height: 230px;
-        width: 100%;
-        overflow-y: scroll;
-        -webkit-overflow-scrolling: touch; // mobile safari
-    }
+
 `;
 
 export const EmptymessageStyles = styled.span`
