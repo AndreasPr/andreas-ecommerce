@@ -3,7 +3,7 @@ import CustomButton from '../custom-button/custom-button.component';
 
 export const CartdropdownContainer = styled.div`
     position: absolute;
-    width: 340px;
+    width: 320px;
     height: 340px;
     display: flex;
     flex-direction: column;
@@ -11,11 +11,12 @@ export const CartdropdownContainer = styled.div`
     border: 1px solid black;
     background-color: white;
     top: 50px;
-    right: 40px;
+    right: 20px;
     z-index: 5;
 
     @media (max-width: 450px) and (min-width: 350px) {
-        width: 250px;
+        width: 320px;
+        right: 0px;
     }
 `;
 
@@ -29,7 +30,7 @@ export const CartitemsStyles = styled.div`
         height: 250px;
         width: 270px;
         overflow-y: scroll;
-        z-index: 1;
+        z-index: 6;
         // -webkit-overflow-scrolling: touch; // mobile safari
     }
 

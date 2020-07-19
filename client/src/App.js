@@ -1,5 +1,5 @@
 import React, {useEffect, lazy, Suspense} from 'react';
-import {MdHome, MdShop, MdContactMail, MdCheck, MdAccountCircle} from 'react-icons/md';
+// import {MdHome, MdShop, MdContactMail, MdCheck, MdAccountCircle} from 'react-icons/md';
 import {Switch, Route, Redirect} from 'react-router-dom';
 import {GlobalStyle} from './global.styles';
 import ErrorBoundary from './components/error-boundary/error-boundary.component';
@@ -7,7 +7,7 @@ import ErrorBoundary from './components/error-boundary/error-boundary.component'
 
 import TopNav from './components/top-nav/top-nav.component';
 import Header from './components/header/header.component';
-import AppBreadcrumbs from './components/breadcrumbs/breadcrumbs.component';
+// import AppBreadcrumbs from './components/breadcrumbs/breadcrumbs.component';
 import Spinner from './components/spinner/spinner.component';
 import Footer from './components/footer/footer.component';
 
@@ -26,28 +26,28 @@ const SignInAndSignUpPage = lazy(() => import('./pages/sign-in-sign-up/sign-in-s
 const CheckoutPage = lazy(() => import('./pages/checkout/checkout.component'));
 
 
-const Separator = ({children, ...props}) => (
-  <span style={{color: 'teal'}} {...props}>
-    {children}
-  </span>
-);
+// const Separator = ({children, ...props}) => (
+//   <span style={{color: 'teal'}} {...props}>
+//     {children}
+//   </span>
+// );
 
-const selections = {
-  icons: {
-    Home: MdHome,
-    Shop: MdShop,
-    Checkout: MdCheck,
-    Contact: MdContactMail,
-    SignIn: MdAccountCircle
-  },
-  routesList: [
-    {to: '/', label: 'Home'},
-    {to: '/shop', label: 'Shop'},
-    {to: '/checkout', label: 'Checkout'},
-    {to: '/contact', label: 'Contact'},
-    {to: '/signin', label: 'Login'}
-  ]
-}
+// const selections = {
+//   icons: {
+//     Home: MdHome,
+//     Shop: MdShop,
+//     Checkout: MdCheck,
+//     Contact: MdContactMail,
+//     SignIn: MdAccountCircle
+//   },
+//   routesList: [
+//     {to: '/', label: 'Home'},
+//     {to: '/shop', label: 'Shop'},
+//     {to: '/checkout', label: 'Checkout'},
+//     {to: '/contact', label: 'Contact'},
+//     {to: '/signin', label: 'Login'}
+//   ]
+// }
 
 const App = ({checkUserSession, currentUser}) => {
 
