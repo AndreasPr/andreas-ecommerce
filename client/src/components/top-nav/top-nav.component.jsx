@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {createStructuredSelector} from 'reselect';
 import {selectCartHidden} from '../../redux/cart/cart.selectors';
-
+import ReactCountryFlag from "react-country-flag";
 import CartIcon from '../cart-icon/cart-icon.component';
 import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 
@@ -35,9 +35,9 @@ const TopNav = ({hidden}) => (
                 <div className="col-md-2 col-lg-2 col-xl-2 text-left language"> 
                     <div className="dropdown">
                         <a className="nav-link dropdown-toggle" href="https://flag-sprites.com" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                             English</a>
+                            <ReactCountryFlag countryCode="US" svg /> English</a>
                         <div className="dropdown-menu" aria-labelledby="dropdown09">
-                            <a className="dropdown-item" href="#fr"> French</a>
+                            <a className="dropdown-item" href="#fr"><ReactCountryFlag countryCode="FR" svg /> French</a>
                         </div>
                     </div>
                 </div>

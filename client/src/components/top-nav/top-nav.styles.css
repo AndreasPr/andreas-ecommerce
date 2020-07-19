@@ -67,3 +67,6 @@ a:hover{
     padding-right: 0px;
     margin-top: 3px;
 }
+.dropdown > a{
+    padding-left: 0px;
+}

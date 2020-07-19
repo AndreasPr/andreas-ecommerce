@@ -64,6 +64,7 @@ const App = ({checkUserSession, currentUser}) => {
         <GlobalStyle/>
         <TopNav />
         <Header />
+        
         {/* <AppBreadcrumbs separator={<Separator>/</Separator>}>
           {
             selections.routesList.map( ({to, label}) => {
