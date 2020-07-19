@@ -35,3 +35,8 @@
     padding-top: 10px;
     padding-bottom: 10px;
 }
+@media screen and (max-width: 580px){
+    .heading-collectionPageTitle{
+        width: 50%;
+    }
+}

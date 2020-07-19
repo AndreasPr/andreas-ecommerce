@@ -11,4 +11,13 @@ export const SignInContainer = styled.div`
 export const SignInButtons = styled.div`
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: 430px){
+        width: 100%;
+      }
+
+
+
+
+
 `;
