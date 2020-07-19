@@ -14,13 +14,9 @@ export const CartdropdownContainer = styled.div`
     right: 40px;
     z-index: 5;
 
-    // @media (max-width: 450px) and (min-width: 350px) {
-    //     height: 250px;
-    //     max-height: 250px;
-    //     width: 230px;
-    //     overflow-y: scroll;
-    //     -webkit-overflow-scrolling: touch; // mobile safari
-    // }
+    @media (max-width: 450px) and (min-width: 350px) {
+        width: 250px;
+    }
 `;
 
 export const CartitemsStyles = styled.div`
@@ -31,7 +27,7 @@ export const CartitemsStyles = styled.div`
     @media (max-width: 450px) and (min-width: 350px) {
         height: 250px;
         max-height: 250px;
-        width: 230px;
+        width: 250px;
         overflow-y: scroll;
         -webkit-overflow-scrolling: touch; // mobile safari
     }

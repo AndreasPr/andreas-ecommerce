@@ -1,5 +1,4 @@
 import React, {useEffect, lazy, Suspense} from 'react';
-import {Link} from 'react-router-dom';
 import {MdHome, MdShop, MdContactMail, MdCheck, MdAccountCircle} from 'react-icons/md';
 import {Switch, Route, Redirect} from 'react-router-dom';
 import {GlobalStyle} from './global.styles';
