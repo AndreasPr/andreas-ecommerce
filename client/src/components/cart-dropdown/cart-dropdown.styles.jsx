@@ -30,8 +30,8 @@ export const CartitemsStyles = styled.div`
         // width: 250px;
         // overflow-y: scroll;
         // -webkit-overflow-scrolling: touch; // mobile safari
-        width: 250px;
-        height: 290px;
+        width: 230px;
+        height: 340px;
         overflow-x: hidden;
         overflow-y: auto;
         text-align: center;
