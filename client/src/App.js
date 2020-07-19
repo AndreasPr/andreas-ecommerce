@@ -50,7 +50,7 @@ const selections = {
 }
 
 const App = ({checkUserSession, currentUser}) => {
- 
+
   // We include the checkUserSession in the array because it is a property function that is being passed in from mapDispatchToProps and
   // because we are at the higher component (App) and checkUserSession does not need to be updated
   // (Behaves like a componentDidMount)

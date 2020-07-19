@@ -1,10 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-// import {ReactComponent as Logo}  from '../../assets/crown.svg';
 import mainLogo  from '../../assets/andreas.png';
 import {connect} from 'react-redux';
-import CartIcon from '../cart-icon/cart-icon.component';
-import CartDropdown from '../cart-dropdown/cart-dropdown.component';
+// import CartIcon from '../cart-icon/cart-icon.component';
+// import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 import {createStructuredSelector} from 'reselect';
 import {selectCurrentUser} from '../../redux/user/user.selectors';
 import {selectCartHidden} from '../../redux/cart/cart.selectors';
@@ -12,33 +11,34 @@ import {signOutStart} from '../../redux/user/user.actions';
 import './header.styles.css';
 // import {HeaderContainer, LogoContainer, OptionsContainer, OptionLink} from './header.styles';
 
-const Header = ({currentUser, hidden, signOutStart}) => (
+const Header = ({currentUser, hidden, signOutStart}) => {
 
-<nav className="navbar navbar-expand-md navbar-dark">
-    <Link to="/" className="navbar-brand"><img src={mainLogo} alt="logo"/></Link>
-    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
-        <span className="navbar-toggler-icon"></span>
-    </button>
-    <div className="navbar-collapse collapse" id="collapsingNavbar">
-        <ul className="navbar-nav ml-auto listOfMenu">
-            <li className="nav-item">
-                <Link to="/shop" className="nav-link">SHOP</Link>
-            </li>
-            <li className="nav-item">
-                <Link to="/contact" className="nav-link">CONTACT</Link>
-            </li>
-            <li className="nav-item">
-            {
-                currentUser 
-                ?
-                <Link to="/" onClick={signOutStart} className="nav-link"> SIGN OUT</Link>
-                :
-                <Link to="/signin" className="nav-link">SIGN IN</Link>
-            }  
-            </li>
-        </ul>
-    </div>
-</nav>
+    return (
+        <nav className="navbar navbar-expand-md navbar-dark">
+            <Link to="/" className="navbar-brand"><img src={mainLogo} alt="logo"/></Link>
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse" id="collapsingNavbar">
+                <ul className="navbar-nav ml-auto listOfMenu">
+                    <li className="nav-item">
+                        <Link to="/shop" className="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show">SHOP</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link to="/contact" className="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show">CONTACT</Link>
+                    </li>
+                    <li className="nav-item">
+                    {
+                        currentUser 
+                        ?
+                        <Link to="/" onClick={signOutStart} className="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show"> SIGN OUT</Link>
+                        :
+                        <Link to="/signin" className="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show">SIGN IN</Link>
+                    }  
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
 // <HeaderContainer>
 //         <LogoContainer to='/'>
@@ -64,7 +64,8 @@ const Header = ({currentUser, hidden, signOutStart}) => (
 //             hidden ? null : <CartDropdown />
 //         }
 //     </HeaderContainer>
-);
+    )
+    };
 
 const mapStateToProps = createStructuredSelector({
     currentUser: selectCurrentUser,

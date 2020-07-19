@@ -1,6 +1,5 @@
 import React from 'react';
 import './top-nav.styles.css';
-import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {createStructuredSelector} from 'reselect';
 import {selectCartHidden} from '../../redux/cart/cart.selectors';
