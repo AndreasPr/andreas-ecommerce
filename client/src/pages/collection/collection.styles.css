@@ -14,6 +14,11 @@
         padding-bottom: 8%;
     }
 }
+@media screen and (max-width: 565px) and (min-width: 350px){
+    .collectionPageProducts{
+        padding-bottom: 70px;
+    }
+}
 .collectionPageTitle{
     padding-left: 0px;
     margin-left: 0px;
