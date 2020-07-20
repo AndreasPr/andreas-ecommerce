@@ -31,7 +31,8 @@ export const CartitemsStyles = styled.div`
         width: 270px;
         overflow-y: scroll;
         z-index: 6;
-        // -webkit-overflow-scrolling: touch; // mobile safari
+        -webkit-overflow-scrolling: touch; // mobile safari
+        height: calc(100% + 1px);
     }
 
 `;
