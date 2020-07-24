@@ -1,11 +1,13 @@
 import React, {useEffect, lazy, Suspense} from 'react';
-import {Route} from 'react-router-dom';
+
 import {connect} from 'react-redux';
 import {fetchCollectionsStart} from '../../redux/shop/shop.actions';
 import Spinner from '../../components/spinner/spinner.component';
+import {Route} from 'react-router-dom';
 
 const CollectionsOverviewContainer = lazy(() => import('../../components/collections-overview/collections-overview.container'));
 const CollectionPageContainer = lazy(() => import('../collection/collection.container'));
+const CollectionItemPage = lazy(() => import('../collection-item/collection-item.component'));
 
 
 const ShopPage = ({fetchCollectionsStart, match}) => {
@@ -15,13 +17,12 @@ const ShopPage = ({fetchCollectionsStart, match}) => {
         fetchCollectionsStart();
      }, [fetchCollectionsStart]);
 
-        return(
+     return(
             <div className='shop-page'>
                 <Suspense fallback={<Spinner/>}>
-                    <Route exact path={`${match.path}`} 
-                    component={CollectionsOverviewContainer} />
-                    <Route path={`${match.path}/:collectionId`} 
-                    component={CollectionPageContainer} />
+                    <Route exact path={`${match.path}`} component={CollectionsOverviewContainer} />
+                    <Route exact path={`${match.path}/:collectionId`} component={CollectionPageContainer} />
+                    <Route exact path={`${match.path}/:collectionId/:id`} component={CollectionItemPage} />
                 </Suspense>
             
             {/* When you use the component props, the router uses React.createElement to create a new React element
