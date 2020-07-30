@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import './top-nav.styles.css';
 import {connect} from 'react-redux';
 import {createStructuredSelector} from 'reselect';
@@ -7,7 +7,11 @@ import ReactCountryFlag from "react-country-flag";
 import CartIcon from '../cart-icon/cart-icon.component';
 import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 
-const TopNav = ({hidden}) => (
+const TopNav = ({hidden}) => {
+
+
+
+return(
     <div className="topNav">
         <div className="container-fluid">
             <div className="row">
@@ -41,7 +45,7 @@ const TopNav = ({hidden}) => (
                     </div>
                 </div>
 
-                <div className="col-1 col-sm-2 col-md-1 col-lg-1 col-xl-1 text-left cart-icon">
+                <div className="col-1 col-sm-2 col-md-1 col-lg-1 col-xl-1 text-left cart-icon" >
                     <CartIcon />   
 
                     {
@@ -54,6 +58,7 @@ const TopNav = ({hidden}) => (
     </div>
 
 );
+};
 
 const mapStateToProps = createStructuredSelector({
     hidden: selectCartHidden

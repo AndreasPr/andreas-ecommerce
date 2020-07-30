@@ -14,7 +14,7 @@ import './header.styles.css';
 const Header = ({currentUser, hidden, signOutStart}) => {
 
     return (
-        <nav className="navbar navbar-expand-md navbar-dark">
+        <nav className="navbar navbar-expand-md navbar-dark" >
             <Link to="/" className="navbar-brand"><img src={mainLogo} alt="logo"/></Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>

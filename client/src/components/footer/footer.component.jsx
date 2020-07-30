@@ -6,6 +6,7 @@ import {ReactComponent as ArmourLogo}  from '../../assets/armour-logo.svg';
 import {ReactComponent as CoachLogo}  from '../../assets/coach-logo.svg';
 import {ReactComponent as GapLogo}  from '../../assets/gap-logo.svg';
 import {ReactComponent as HilfigerLogo}  from '../../assets/hilfiger-logo.svg';
+import Subscription from '../subscription/subscription.component';
 
 const Footer = () => (
     <footer className="footer">
@@ -49,13 +50,8 @@ const Footer = () => (
                 </div>
                 <div className="col-sm-12 col-md-12 col-lg-6 col-xl-2 mr-xl-auto">
                     <h3 className="headingFooter">Join Our Newsletter</h3>
-                    <p>Get E-mail updates about our latest shop and special offers.</p>               
-                    <div className="input-group mb-3">
-                        <input type="text" className="form-control shadow-none" placeholder="Enter your email" id="subscribeConnection"/>
-                        <div className="input-group-prepend">
-                            <button className="btn btn-outline-secondary btnOfSubscribe" type="button">Subscribe</button>
-                        </div>
-                    </div>
+                    <p>Get E-mail updates about our latest shop and special offers.</p>   
+                    <Subscription/>                    
                 </div>
             </div>
             <div className="row copyright-reserved">

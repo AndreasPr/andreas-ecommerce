@@ -9,7 +9,7 @@ const MenuItem = ({title, imageUrl, size, history, linkUrl, match}) =>{
         backgroundImage: `url(${imageUrl})`
     };
 
-    console.log(linkUrl);
+
     return (
         // <MenuItemContainer size={size} onClick={() => history.push(`${match.url}${linkUrl}`)} >
         //     <MenuItemBackgroundImage className='background-image' imageUrl={imageUrl}/>

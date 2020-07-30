@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef, useState, useEffect} from 'react';
 //import './cart-dropdown.styles.scss';
 //import CustomButton from '../custom-button/custom-button.component';
 import CartItem from '../cart-item/cart-item.component';
@@ -10,26 +10,31 @@ import {toggleCartHidden} from '../../redux/cart/cart.actions';
 import {CartdropdownContainer, CartitemsStyles, EmptymessageStyles, CheckoutButtonStyles, CheckoutPageTotal, CheckoutTotal, CheckoutTotalPrice} from './cart-dropdown.styles';
 
 
-const CartDropdown = ({cartItems, history, dispatch, total}) => (
-    <CartdropdownContainer>
-        <CartitemsStyles>
-            {
-                cartItems.length 
-                ?
-                cartItems.map(cartItem => (
-                    <CartItem key={cartItem.id} item={cartItem} />
-                ))
-                :
-                <EmptymessageStyles>Your cart is empty</EmptymessageStyles>
-            }
-        </CartitemsStyles>
-        <CheckoutPageTotal>
-            <CheckoutTotal>Total:</CheckoutTotal>  <CheckoutTotalPrice>${total}</CheckoutTotalPrice>
-        </CheckoutPageTotal>
-        <CheckoutButtonStyles onClick={() => {history.push('/checkout'); dispatch(toggleCartHidden());}}>
-            GO TO CHECKOUT</CheckoutButtonStyles>
-    </CartdropdownContainer>
-);
+
+const CartDropdown = ({cartItems, history, dispatch, total}) => {
+ 
+
+    return (
+        <CartdropdownContainer>
+            <CartitemsStyles>
+                {
+                    cartItems.length 
+                    ?
+                    cartItems.map(cartItem => (
+                        <CartItem key={cartItem.id} item={cartItem} />
+                    ))
+                    :
+                    <EmptymessageStyles>Your cart is empty</EmptymessageStyles>
+                }
+            </CartitemsStyles>
+            <CheckoutPageTotal>
+                <CheckoutTotal>Total:</CheckoutTotal>  <CheckoutTotalPrice>${total}</CheckoutTotalPrice>
+            </CheckoutPageTotal>
+            <CheckoutButtonStyles onClick={() => {history.push('/checkout'); dispatch(toggleCartHidden());}}>
+                GO TO CHECKOUT</CheckoutButtonStyles>
+        </CartdropdownContainer>
+    );
+};
 
 const mapStateToProps = createStructuredSelector ({
     cartItems: selectCartItems,
