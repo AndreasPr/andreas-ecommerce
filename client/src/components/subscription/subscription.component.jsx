@@ -2,37 +2,51 @@ import React, {useState} from 'react';
 import './subscription.styles.css';
 import {connect} from 'react-redux';
 import {addSubscription} from '../../redux/subscription/subscription.actions';
+import emailjs from 'emailjs-com';
 
 const Subscription = ({addSubscription}) => {
 
     const [userInputEmail, setUserInputEmail] = useState({
         email: ''
     });
-
     const {email} = userInputEmail;
 
-    const handleSubmit = event => {
+    
+    const [sendEmail, setSendEmail] = useState({
+        reply_to: '',
+        from_name: 'Andreas.',
+        to_name: 'Our New Subscriber',
+        message_html: '<h1>We are so grateful you have joined us.</h1>'
+     });
+
+
+     const handleSubmit = event => {
         event.preventDefault();
         addSubscription({email});
         setUserInputEmail({
             email: ''
         });
+
+        var service_id = "default_service";
+        var template_id = "template_8Et5Rf44";
+        var user_id = "user_TWYEmbkpe89OoQJEh7SSp";
+        emailjs.send(service_id, template_id, sendEmail, user_id);
     };
+
 
     const handleChange = event =>{
         const {value, name} = event.target;
         setUserInputEmail({...userInputEmail, [name]:value });
+        setSendEmail({...sendEmail, reply_to:value});
     };
 
     return(
-        <div className="input-group mb-3">
-            <form className='subscription-form' onSubmit={handleSubmit}>
-                <input type="email" className="form-control shadow-none" onChange={handleChange} name="email" value={email} placeholder="Enter your email" id="subscribeConnection" required/>
-                <div className="input-group-prepend">
-                    <button className="btn btn-outline-secondary btnOfSubscribe" type="submit">Subscribe</button>
-                </div>
-            </form>
-        </div>
+        <form className='subscription-form' onSubmit={handleSubmit}>
+            <input type="email" className="form-control shadow-none" onChange={handleChange} name="email" value={email} placeholder="Enter your email" id="subscribeConnection" required/>
+            <div className="input-group-prepend">
+                <button className="btn btn-outline-secondary btnOfSubscribe" type="submit">Subscribe</button>
+            </div>
+        </form>
     );
 };
 

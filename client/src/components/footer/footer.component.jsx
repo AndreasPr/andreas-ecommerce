@@ -50,8 +50,10 @@ const Footer = () => (
                 </div>
                 <div className="col-sm-12 col-md-12 col-lg-6 col-xl-2 mr-xl-auto">
                     <h3 className="headingFooter">Join Our Newsletter</h3>
-                    <p>Get E-mail updates about our latest shop and special offers.</p>   
-                    <Subscription/>                    
+                    <p>Get E-mail updates about our latest shop and special offers.</p> 
+                    <div className="input-group mb-3"> 
+                    <Subscription/>     
+                    </div>                
                 </div>
             </div>
             <div className="row copyright-reserved">
