@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React from 'react';
 import './top-nav.styles.css';
 import {connect} from 'react-redux';
 import {createStructuredSelector} from 'reselect';

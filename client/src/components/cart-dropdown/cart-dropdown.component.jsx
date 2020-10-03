@@ -1,6 +1,4 @@
-import React, {useRef, useState, useEffect} from 'react';
-//import './cart-dropdown.styles.scss';
-//import CustomButton from '../custom-button/custom-button.component';
+import React from 'react';
 import CartItem from '../cart-item/cart-item.component';
 import {connect} from 'react-redux';
 import {selectCartItems, selectCartTotal} from '../../redux/cart/cart.selectors';
