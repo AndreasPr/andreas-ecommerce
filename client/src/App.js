@@ -3,6 +3,7 @@ import React, {useEffect, lazy, Suspense} from 'react';
 import {Switch, Route, Redirect} from 'react-router-dom';
 import {GlobalStyle} from './global.styles';
 import ErrorBoundary from './components/error-boundary/error-boundary.component';
+import ScrollToTop from './scrollToTop';
 
 
 import TopNav from './components/top-nav/top-nav.component';
@@ -64,7 +65,7 @@ const App = ({checkUserSession, currentUser}) => {
         <GlobalStyle/>
         <TopNav />
         <Header />
-        
+        <ScrollToTop />
         {/* <AppBreadcrumbs separator={<Separator>/</Separator>}>
           {
             selections.routesList.map( ({to, label}) => {
