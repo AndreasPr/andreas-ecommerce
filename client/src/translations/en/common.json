@@ -1,0 +1,37 @@
+{
+    "button": {
+        "language": "Language"
+    },
+    "header": {
+        "nav1": "SHOP",
+        "nav2": "CONTACT",
+        "nav3": "SIGN IN",
+        "nav4": "SIGN OUT"
+    },
+    "homepage": {
+        "shopNow": "SHOP NOW"
+    },
+    "footer": {
+        "contact_details": {
+            "address": "Address",
+            "phone": "Phone",
+            "email": "Email"
+        },
+        "information": {
+            "heading": "Information",
+            "aboutus": "About Us",
+            "shop": "Shop",
+            "checkout": "Checkout"
+        },
+        "account": {
+            "heading": "Account",
+            "signup": "Sign Up",
+            "login": "Login",
+            "contactus": "Contact Us"
+        },
+        "newsletter": {
+            "heading": "Join Our Newsletter",
+            "content": "Get E-mail updates about our latest shop and special offers."
+        }
+    }
+}

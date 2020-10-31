@@ -1,14 +1,14 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
 import './menu-item.styles.css';
+import {useTranslation} from 'react-i18next';
 // import {MenuItemContainer, MenuItemBackgroundImage, MenuItemContent, MenuItemTitle, MenuItemSubtitle} from './menu-item.styles';
 
 const MenuItem = ({title, imageUrl, size, history, linkUrl, match}) =>{
-
+    const [t, i18n] = useTranslation('common');
     const backgroundDiv = {
         backgroundImage: `url(${imageUrl})`
     };
-
 
     return (
         // <MenuItemContainer size={size} onClick={() => history.push(`${match.url}${linkUrl}`)} >
@@ -23,7 +23,7 @@ const MenuItem = ({title, imageUrl, size, history, linkUrl, match}) =>{
             <div className='background-image' style={backgroundDiv}></div>
                 <div className='content'>
                     <h1 className="menuItemTitle">{title.toUpperCase()}</h1>
-                    <span className="menuItemSubtitle">SHOP NOW</span>
+                    <span className="menuItemSubtitle">{t('homepage.shopNow')}</span>
                 </div>
         
         </div>

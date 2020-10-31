@@ -1,0 +1,37 @@
+{
+    "button": {
+        "language": "El Lenguaje"
+    },
+    "header": {
+        "nav1": "TIENDA",
+        "nav2": "CONTACTO",
+        "nav3": "REGISTRARSE",
+        "nav4": "DESCONECTAR"
+    },
+    "homepage": {
+        "shopNow": "COMPRA AHORA"
+    },
+    "footer": {
+        "contact_details": {
+            "address": "Alocucion",
+            "phone": "Telefono",
+            "email": "Email"
+        },
+        "information": {
+            "heading": "Información",
+            "aboutus": "Sobre nosotros",
+            "shop": "Tienda",
+            "checkout": "Revisa"
+        },
+        "account": {
+            "heading": "El reporte",
+            "signup": "Regístrate",
+            "login": "El login",
+            "contactus": "Contacta con nosotros"
+        },
+        "newsletter": {
+            "heading": "Suscríbase a nuestro boletín",
+            "content": "Reciba actualizaciones por correo electrónico sobre nuestra última tienda y ofertas especiales."
+        }
+    }
+}

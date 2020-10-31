@@ -11,7 +11,11 @@ import {signOutStart} from '../../redux/user/user.actions';
 import './header.styles.css';
 // import {HeaderContainer, LogoContainer, OptionsContainer, OptionLink} from './header.styles';
 
+import {useTranslation} from 'react-i18next';
+
 const Header = ({currentUser, hidden, signOutStart}) => {
+
+    const [t, i18n] = useTranslation('common');
 
     return (
         <nav className="navbar navbar-expand-md navbar-dark" >
@@ -22,18 +26,18 @@ const Header = ({currentUser, hidden, signOutStart}) => {
             <div className="collapse navbar-collapse" id="collapsingNavbar">
                 <ul className="navbar-nav ml-auto listOfMenu">
                     <li className="nav-item">
-                        <Link to="/shop" className="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show">SHOP</Link>
+                        <Link to="/shop" className="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show">{t('header.nav1')}</Link>
                     </li>
                     <li className="nav-item">
-                        <Link to="/contact" className="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show">CONTACT</Link>
+                        <Link to="/contact" className="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show">{t('header.nav2')}</Link>
                     </li>
                     <li className="nav-item">
                     {
                         currentUser 
                         ?
-                        <Link to="/" onClick={signOutStart} className="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show"> SIGN OUT</Link>
+                        <Link to="/" onClick={signOutStart} className="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show">{t('header.nav4')}</Link>
                         :
-                        <Link to="/signin" className="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show">SIGN IN</Link>
+                        <Link to="/signin" className="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show">{t('header.nav3')}</Link>
                     }  
                     </li>
                 </ul>

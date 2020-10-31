@@ -6,11 +6,10 @@ import {selectCartHidden} from '../../redux/cart/cart.selectors';
 import ReactCountryFlag from "react-country-flag";
 import CartIcon from '../cart-icon/cart-icon.component';
 import CartDropdown from '../cart-dropdown/cart-dropdown.component';
+import {useTranslation} from 'react-i18next';
 
 const TopNav = ({hidden}) => {
-
-
-
+    const [t, i18n] = useTranslation('common');
 return(
     <div className="topNav">
         <div className="container-fluid">
@@ -37,10 +36,13 @@ return(
 
                 <div className="col-md-2 col-lg-2 col-xl-2 text-left language"> 
                     <div className="dropdown">
-                        <a className="nav-link dropdown-toggle" href="https://flag-sprites.com" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <ReactCountryFlag countryCode="US" svg /> English</a>
+                        <a className="nav-link dropdown-toggle" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {t('button.language')} </a>
                         <div className="dropdown-menu" aria-labelledby="dropdown09">
-                            <a className="dropdown-item" href="#fr"><ReactCountryFlag countryCode="FR" svg /> French</a>
+                            <a className="dropdown-item" onClick={() => i18n.changeLanguage('en')}>
+                                <ReactCountryFlag countryCode="US" svg />English</a>
+                            <a className="dropdown-item" onClick={() => i18n.changeLanguage('es')}>
+                                <ReactCountryFlag countryCode="ES" svg />Spanish</a>
                         </div>
                     </div>
                 </div>

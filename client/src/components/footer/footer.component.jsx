@@ -7,8 +7,11 @@ import {ReactComponent as CoachLogo}  from '../../assets/coach-logo.svg';
 import {ReactComponent as GapLogo}  from '../../assets/gap-logo.svg';
 import {ReactComponent as HilfigerLogo}  from '../../assets/hilfiger-logo.svg';
 import Subscription from '../subscription/subscription.component';
+import {useTranslation} from 'react-i18next';
 
-const Footer = () => (
+const Footer = () =>{ 
+    const [t, i18n] = useTranslation('common');
+return(
     <footer className="footer">
         <div className="container-fluid">
             <div className="row logoForFooter">
@@ -28,29 +31,29 @@ const Footer = () => (
             <div className="row infoForFooter">
                 <div className="col-sm-12 col-md-12 col-lg-6 col-xl-2 ml-xl-auto">
                     <img src={mainLogo} alt="logo" />
-                    <p>Address: 12345, Test Road, New York</p>
-                    <p>Phone: 1234567890</p>
-                    <p>Email: testemail@gmail.com</p>
+                    <p>{t('footer.contact_details.address')}: 12345, Test Road, New York</p>
+                    <p>{t('footer.contact_details.phone')}: 1234567890</p>
+                    <p>{t('footer.contact_details.email')}: testemail@gmail.com</p>
                 </div>
                 <div className="col-sm-12 col-md-12 col-lg-6 col-xl-2 ml-xl-auto">
-                    <h3 className="headingFooter">Information</h3>
+                    <h3 className="headingFooter">{t('footer.information.heading')}</h3>
                     <ul className="listOfFooter">
-                        <li><Link to='/about' className="linksOfFooter">About us</Link></li>
-                        <li><Link to='/shop' className="linksOfFooter">Shop</Link></li>
-                        <li><Link to='/checkout' className="linksOfFooter">Checkout</Link></li>
+                        <li><Link to='/about' className="linksOfFooter">{t('footer.information.aboutus')}</Link></li>
+                        <li><Link to='/shop' className="linksOfFooter">{t('footer.information.shop')}</Link></li>
+                        <li><Link to='/checkout' className="linksOfFooter">{t('footer.information.checkout')}</Link></li>
                     </ul>
                 </div>
                 <div className="col-sm-12 col-md-12 col-lg-6 col-xl-2 ml-xl-auto">
-                    <h3 className="headingFooter">Account</h3>
+                    <h3 className="headingFooter">{t('footer.account.heading')}</h3>
                     <ul className="listOfFooter">
-                        <li><Link to='/signin' className="linksOfFooter">Sign Up</Link></li>
-                        <li><Link to='/signin' className="linksOfFooter">Login</Link></li>
-                        <li><Link to='/contact' className="linksOfFooter">Contact Us</Link></li>
+                        <li><Link to='/signin' className="linksOfFooter">{t('footer.account.signup')}</Link></li>
+                        <li><Link to='/signin' className="linksOfFooter">{t('footer.account.login')}</Link></li>
+                        <li><Link to='/contact' className="linksOfFooter">{t('footer.account.contactus')}</Link></li>
                     </ul>
                 </div>
                 <div className="col-sm-12 col-md-12 col-lg-6 col-xl-2 mr-xl-auto">
-                    <h3 className="headingFooter">Join Our Newsletter</h3>
-                    <p>Get E-mail updates about our latest shop and special offers.</p> 
+                    <h3 className="headingFooter">{t('footer.newsletter.heading')}</h3>
+                    <p>{t('footer.newsletter.content')}</p> 
                     <div className="input-group mb-3"> 
                     <Subscription/>     
                     </div>                
@@ -64,4 +67,5 @@ const Footer = () => (
         </div>
     </footer>
 );
+};
 export default Footer;
