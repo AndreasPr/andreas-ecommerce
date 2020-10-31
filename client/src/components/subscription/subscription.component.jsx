@@ -7,7 +7,7 @@ import {useTranslation} from 'react-i18next';
 
 const Subscription = ({addSubscription}) => {
 
-    const [t, i18n] = useTranslation('common');
+    const [t] = useTranslation('common');
     const [userInputEmail, setUserInputEmail] = useState({
         email: ''
     });

@@ -36,16 +36,20 @@ return(
 
                 <div className="col-md-2 col-lg-2 col-xl-2 text-left language"> 
                     <div className="dropdown">
-                        <a className="nav-link dropdown-toggle" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            {t('button.language')} </a>
+                        <button  className="btn btn-secondary dropdown-toggle languageLink" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {t('button.language')} </button>
                         <div className="dropdown-menu" aria-labelledby="dropdown09">
-                            <a className="dropdown-item" onClick={() => i18n.changeLanguage('en')}>
+                            <a className="dropdown-item" href="javascript:void(0)" onClick={() => i18n.changeLanguage('en')}>
                                 <ReactCountryFlag countryCode="US" svg />English</a>
-                            <a className="dropdown-item" onClick={() => i18n.changeLanguage('es')}>
+                            <a className="dropdown-item" href="javascript:void(0)" onClick={() => i18n.changeLanguage('es')}>
                                 <ReactCountryFlag countryCode="ES" svg />Spanish</a>
                         </div>
                     </div>
                 </div>
+
+
+
+
 
                 <div className="col-1 col-sm-2 col-md-1 col-lg-1 col-xl-1 text-left cart-icon" >
                     <CartIcon />   

@@ -10,7 +10,7 @@ import {useTranslation} from 'react-i18next';
 
 const CartDropdown = ({cartItems, history, dispatch, total}) => {
  
-    const [t, i18n] = useTranslation('common');
+    const [t] = useTranslation('common');
     return (
         <CartdropdownContainer>
             <CartitemsStyles>

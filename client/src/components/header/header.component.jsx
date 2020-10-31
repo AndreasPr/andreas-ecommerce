@@ -15,7 +15,7 @@ import {useTranslation} from 'react-i18next';
 
 const Header = ({currentUser, hidden, signOutStart}) => {
 
-    const [t, i18n] = useTranslation('common');
+    const [t] = useTranslation('common');
 
     return (
         <nav className="navbar navbar-expand-md navbar-dark" >

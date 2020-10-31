@@ -11,7 +11,7 @@ import SuccessfulMessage from '../../components/successful-message/successful-me
 import {useTranslation} from 'react-i18next';
 
 const Contact = ({contactStart, getSuccessOrFail}) => {
-    const [t, i18n] = useTranslation('common');
+    const [t] = useTranslation('common');
     const [contactInfo, setContactInfo] = useState({
         firstname: '',
         lastname: '',

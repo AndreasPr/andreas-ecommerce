@@ -10,7 +10,7 @@ import {useTranslation} from 'react-i18next';
 //     CheckoutPageTotal, CheckoutPageTestWarning} from './checkout.styles';
 
 const CheckoutPage = ({cartItems, total}) => {
-    const [t, i18n] = useTranslation('common');
+    const [t] = useTranslation('common');
 return(
     // <CheckoutPageContainer>
     //      <CheckoutPageHeader>

@@ -2,6 +2,9 @@
     padding-bottom: 10px;
     padding-top: 10px;
 }
+.languageLink{
+    cursor: pointer;
+}
 .email{
     margin-left: 0px;
     margin-bottom: auto;

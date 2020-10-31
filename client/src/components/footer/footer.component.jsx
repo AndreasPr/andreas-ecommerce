@@ -10,7 +10,7 @@ import Subscription from '../subscription/subscription.component';
 import {useTranslation} from 'react-i18next';
 
 const Footer = () =>{ 
-    const [t, i18n] = useTranslation('common');
+    const [t] = useTranslation('common');
 return(
     <footer className="footer">
         <div className="container-fluid">

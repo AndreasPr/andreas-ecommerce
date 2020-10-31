@@ -7,7 +7,7 @@ import {connect} from 'react-redux';
 import {useTranslation} from 'react-i18next';
 
 const SignIn  = ({emailSignInStart, googleSignInStart}) => {
-    const [t, i18n] = useTranslation('common');
+    const [t] = useTranslation('common');
     const [userCredentials, setUserCredentials] = useState({email: '', password: ''});
     const {email, password} = userCredentials;
 

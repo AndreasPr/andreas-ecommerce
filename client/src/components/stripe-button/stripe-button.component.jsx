@@ -5,7 +5,7 @@ import {useTranslation} from 'react-i18next';
 
 
 const StripeCheckoutButton = ({price}) => {
-    const [t, i18n] = useTranslation('common');
+    const [t] = useTranslation('common');
     const priceForStripe = price * 100;
     const publishablekey = 'pk_test_6Jv1xPx0eczcDZMfmVVqipdN00dFQ2B4n7';
 

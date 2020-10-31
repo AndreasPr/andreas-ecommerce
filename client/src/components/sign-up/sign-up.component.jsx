@@ -7,7 +7,7 @@ import {SignUpContainer, SignUpTitle} from './sign-up.styles';
 import {useTranslation} from 'react-i18next';
 
 const SignUp = ({signUpStart}) => {
-    const [t, i18n] = useTranslation('common');
+    const [t] = useTranslation('common');
     const [userCredentials, setUserCredentials] = useState({
         displayName: '',
         email: '',

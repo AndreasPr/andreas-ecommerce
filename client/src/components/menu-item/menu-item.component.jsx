@@ -5,7 +5,7 @@ import {useTranslation} from 'react-i18next';
 // import {MenuItemContainer, MenuItemBackgroundImage, MenuItemContent, MenuItemTitle, MenuItemSubtitle} from './menu-item.styles';
 
 const MenuItem = ({title, imageUrl, size, history, linkUrl, match}) =>{
-    const [t, i18n] = useTranslation('common');
+    const [t] = useTranslation('common');
     const backgroundDiv = {
         backgroundImage: `url(${imageUrl})`
     };
