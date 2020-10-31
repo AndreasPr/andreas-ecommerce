@@ -15,6 +15,7 @@ It is created by using Create React App, State Management, Styling, Routers, Fun
 * React Redux – Redux Saga – Redux Thunk
 * React Hooks
 * React Router
+* React i18next
 * Higher-Order Components (HOC)
 * Error Boundaries
 * Axios
@@ -52,6 +53,7 @@ It is created by using Create React App, State Management, Styling, Routers, Fun
 * About Page
 * Email Subscription to newsletter
 * Social Media
+* Translation to different language
 
 ## Project Status
 The project is still being developed.
