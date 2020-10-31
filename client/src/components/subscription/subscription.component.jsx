@@ -3,9 +3,11 @@ import './subscription.styles.css';
 import {connect} from 'react-redux';
 import {addSubscription} from '../../redux/subscription/subscription.actions';
 import emailjs from 'emailjs-com';
+import {useTranslation} from 'react-i18next';
 
 const Subscription = ({addSubscription}) => {
 
+    const [t, i18n] = useTranslation('common');
     const [userInputEmail, setUserInputEmail] = useState({
         email: ''
     });
@@ -42,9 +44,9 @@ const Subscription = ({addSubscription}) => {
 
     return(
         <form className='subscription-form' onSubmit={handleSubmit}>
-            <input type="email" className="form-control shadow-none" onChange={handleChange} name="email" value={email} placeholder="Enter your email" id="subscribeConnection" required/>
+            <input type="email" className="form-control shadow-none" onChange={handleChange} name="email" value={email} placeholder={t('footer.newsletter.placeholder')} id="subscribeConnection" required/>
             <div className="input-group-prepend">
-                <button className="btn btn-outline-secondary btnOfSubscribe" type="submit">Subscribe</button>
+                <button className="btn btn-outline-secondary btnOfSubscribe" type="submit">{t('footer.newsletter.button')}</button>
             </div>
         </form>
     );

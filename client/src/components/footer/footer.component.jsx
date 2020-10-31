@@ -61,7 +61,7 @@ return(
             </div>
             <div className="row copyright-reserved">
                 <div className="col-sm-12 col-md-6 col-lg-12 col-xl-11 ml-xl-auto">
-                    <p>Copyright @2020 All rights reserved</p>
+                    <p>{t('footer.footer_bottom.copyrights')}</p>
                 </div>
             </div>
         </div>

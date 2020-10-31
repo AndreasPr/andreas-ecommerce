@@ -31,7 +31,12 @@
         },
         "newsletter": {
             "heading": "Join Our Newsletter",
-            "content": "Get E-mail updates about our latest shop and special offers."
+            "content": "Get E-mail updates about our latest shop and special offers.",
+            "placeholder": "Enter your email",
+            "button": "Subscribe"
+        },
+        "footer_bottom":{
+            "copyrights": "Copyright @2020 All rights reserved"
         }
     }
 }

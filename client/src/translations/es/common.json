@@ -31,7 +31,12 @@
         },
         "newsletter": {
             "heading": "Suscríbase a nuestro boletín",
-            "content": "Reciba actualizaciones por correo electrónico sobre nuestra última tienda y ofertas especiales."
+            "content": "Reciba actualizaciones por correo electrónico sobre nuestra última tienda y ofertas especiales.",
+            "placeholder": "Introduce tu correo electrónico",
+            "button": "Suscribir"
+        },
+        "footer_bottom":{
+            "copyrights": "Copyright @ 2020 Todos los derechos reservados"
         }
     }
 }
