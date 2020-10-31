@@ -8,9 +8,10 @@ import {connect} from 'react-redux';
 import {createStructuredSelector} from 'reselect';
 import {getSuccessOrFail} from '../../redux/contact/contact.selectors';
 import SuccessfulMessage from '../../components/successful-message/successful-message.component';
-
+import {useTranslation} from 'react-i18next';
 
 const Contact = ({contactStart, getSuccessOrFail}) => {
+    const [t, i18n] = useTranslation('common');
     const [contactInfo, setContactInfo] = useState({
         firstname: '',
         lastname: '',
@@ -53,15 +54,15 @@ const Contact = ({contactStart, getSuccessOrFail}) => {
 
     return(
         <ContactContainer>
-            <ContactTitle>Contact Us</ContactTitle>
+            <ContactTitle>{t('contact.title')}</ContactTitle>
             <form className="contact-form" onSubmit={handleSubmit}>
-                <FormInput type="text" name="firstname" value={firstname} onChange={handleChange} autocomplete="off" label="Firstname" required />
-                <FormInput type="text" name="lastname" value={lastname} onChange={handleChange} autocomplete="off" label="Lastname" required />
-                <FormInput type="text" name="email" value={email} onChange={handleChange} autocomplete="off" label="Email" required />
-                <FormInput type="text" name="message" value={message} onChange={handleChange} autocomplete="off" label="Message" required />
+                <FormInput type="text" name="firstname" value={firstname} onChange={handleChange} autocomplete="off" label={t('contact.firstname')} required />
+                <FormInput type="text" name="lastname" value={lastname} onChange={handleChange} autocomplete="off" label={t('contact.lastname')} required />
+                <FormInput type="text" name="email" value={email} onChange={handleChange} autocomplete="off" label={t('contact.email')} required />
+                <FormInput type="text" name="message" value={message} onChange={handleChange} autocomplete="off" label={t('contact.message')} required />
 
                 <div className="contactButton">
-                    <CustomButton type="submit">Submit</CustomButton>
+                    <CustomButton type="submit">{t('contact.submit')}</CustomButton>
                 </div>
                 {
                     getSuccessOrFail

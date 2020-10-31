@@ -38,5 +38,36 @@
         "footer_bottom":{
             "copyrights": "Copyright @ 2020 Todos los derechos reservados"
         }
+    },
+    "contact": {
+        "title": "Contacta con nosotros",
+        "firstname": "Primer nombre",
+        "lastname": "Apellido",
+        "email": "Email",
+        "message": "Mensaje",
+        "submit": "Enviar"
+    },
+    "signin":{
+        "login": {
+            "heading": "Ya tengo una cuenta",
+            "sub-heading": "Inicie sesión con su correo electrónico y contraseña",
+            "email": "email",
+            "password": "contraseña",
+            "signin": "REGISTRARSE"
+        },
+        "signup": {
+            "heading": "No tengo una cuenta",
+            "sub-heading": "Regístrese con su correo electrónico y contraseña",
+            "displayname": "Nombre para mostrar",
+            "email": "email",
+            "password": "contraseña",
+            "confirmpassword": "confirmar contraseña",
+            "signup": "REGÍSTRATE"
+        }
+    },
+    "cart_dropdown": {
+        "empty_message": "Tu carrito esta vacío",
+        "total": "Total",
+        "checkout_button": "IR A PAGAR"
     }
 }

@@ -4,8 +4,10 @@ import CustomButton from '../custom-button/custom-button.component';
 import {SignInContainer, SignInButtons} from './sign-in.styles';
 import {googleSignInStart, emailSignInStart} from '../../redux/user/user.actions';
 import {connect} from 'react-redux';
+import {useTranslation} from 'react-i18next';
 
 const SignIn  = ({emailSignInStart, googleSignInStart}) => {
+    const [t, i18n] = useTranslation('common');
     const [userCredentials, setUserCredentials] = useState({email: '', password: ''});
     const {email, password} = userCredentials;
 
@@ -21,14 +23,14 @@ const SignIn  = ({emailSignInStart, googleSignInStart}) => {
 
         return(
             <SignInContainer>
-                <h2>I already have an account </h2>
-                <span>Sign in with your email and password</span>
+                <h2>{t('signin.login.heading')}</h2>
+                <span>{t('signin.login.sub-heading')}</span>
                 <form onSubmit={handleSubmit}>
                     <FormInput name='email' 
                         type='email' 
                         value={email} 
                         required 
-                        label='email'
+                        label={t('signin.login.email')}
                         handleChange={handleChange}/>
                     
                     <FormInput 
@@ -36,10 +38,10 @@ const SignIn  = ({emailSignInStart, googleSignInStart}) => {
                         type='password' 
                         value={password} 
                         required 
-                        label='password'
+                        label={t('signin.login.password')}
                         handleChange={handleChange} />
                     <SignInButtons>
-                        <CustomButton type='submit'>Sign in</CustomButton>
+                        <CustomButton type='submit'>{t('signin.login.signin')}</CustomButton>
                         <CustomButton type='button' onClick={googleSignInStart} isGoogleSignIn>Google</CustomButton>
                     </SignInButtons>
                 </form>

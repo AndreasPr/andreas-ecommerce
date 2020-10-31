@@ -6,12 +6,11 @@ import {createStructuredSelector} from 'reselect';
 import {withRouter} from 'react-router-dom';
 import {toggleCartHidden} from '../../redux/cart/cart.actions';
 import {CartdropdownContainer, CartitemsStyles, EmptymessageStyles, CheckoutButtonStyles, CheckoutPageTotal, CheckoutTotal, CheckoutTotalPrice} from './cart-dropdown.styles';
-
-
+import {useTranslation} from 'react-i18next';
 
 const CartDropdown = ({cartItems, history, dispatch, total}) => {
  
-
+    const [t, i18n] = useTranslation('common');
     return (
         <CartdropdownContainer>
             <CartitemsStyles>
@@ -22,14 +21,14 @@ const CartDropdown = ({cartItems, history, dispatch, total}) => {
                         <CartItem key={cartItem.id} item={cartItem} />
                     ))
                     :
-                    <EmptymessageStyles>Your cart is empty</EmptymessageStyles>
+                    <EmptymessageStyles>{t('cart_dropdown.empty_message')}</EmptymessageStyles>
                 }
             </CartitemsStyles>
             <CheckoutPageTotal>
-                <CheckoutTotal>Total:</CheckoutTotal>  <CheckoutTotalPrice>${total}</CheckoutTotalPrice>
+                <CheckoutTotal>{t('cart_dropdown.total')}:</CheckoutTotal>  <CheckoutTotalPrice>${total}</CheckoutTotalPrice>
             </CheckoutPageTotal>
             <CheckoutButtonStyles onClick={() => {history.push('/checkout'); dispatch(toggleCartHidden());}}>
-                GO TO CHECKOUT</CheckoutButtonStyles>
+            {t('cart_dropdown.checkout_button')}</CheckoutButtonStyles>
         </CartdropdownContainer>
     );
 };

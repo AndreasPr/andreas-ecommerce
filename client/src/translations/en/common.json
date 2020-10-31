@@ -38,5 +38,36 @@
         "footer_bottom":{
             "copyrights": "Copyright @2020 All rights reserved"
         }
+    },
+    "contact": {
+        "title": "Contact Us",
+        "firstname": "Firstname",
+        "lastname": "Lastname",
+        "email": "Email",
+        "message": "Message",
+        "submit": "Submit"
+    },
+    "signin":{
+        "login": {
+            "heading": "I already have an account",
+            "sub-heading": "Sign in with your email and password",
+            "email": "email",
+            "password": "password",
+            "signin": "SIGN IN"
+        },
+        "signup": {
+            "heading": "I don't have an account",
+            "sub-heading": "Sign Up with your Email and Password",
+            "displayname": "display name",
+            "email": "email",
+            "password": "password",
+            "confirmpassword": "confirm password",
+            "signup": "SIGN UP"
+        }
+    },
+    "cart_dropdown": {
+        "empty_message": "Your cart is empty",
+        "total": "Total",
+        "checkout_button": "GO TO CHECKOUT"
     }
 }

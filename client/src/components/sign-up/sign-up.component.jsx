@@ -4,8 +4,10 @@ import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
 import {signUpStart} from '../../redux/user/user.actions';
 import {SignUpContainer, SignUpTitle} from './sign-up.styles';
+import {useTranslation} from 'react-i18next';
 
 const SignUp = ({signUpStart}) => {
+    const [t, i18n] = useTranslation('common');
     const [userCredentials, setUserCredentials] = useState({
         displayName: '',
         email: '',
@@ -32,20 +34,20 @@ const SignUp = ({signUpStart}) => {
     
     return(
         <SignUpContainer>
-            <SignUpTitle>I don't have an account</SignUpTitle>
-            <span>Sign Up with your Email and Password</span>
+            <SignUpTitle>{t('signin.signup.heading')}</SignUpTitle>
+            <span>{t('signin.signup.sub-heading')}</span>
             <form className='sign-up-form' onSubmit={handleSubmit}>
                 <FormInput type='text' name='displayName' 
-                value={displayName} onChange={handleChange} label='Display Name' required />
+                value={displayName} onChange={handleChange} label={t('signin.signup.displayname')} required />
                 <FormInput type='email' name='email' 
-                value={email} onChange={handleChange} label='Email' required />
+                value={email} onChange={handleChange} label={t('signin.signup.email')} required />
                 <FormInput type='password' name='password' 
-                value={password} onChange={handleChange} label='Password' required />
+                value={password} onChange={handleChange} label={t('signin.signup.password')} required />
                 <FormInput type='password' name='confirmPassword' 
-                value={confirmPassword} onChange={handleChange} label='Confirm Password' required />
+                value={confirmPassword} onChange={handleChange} label={t('signin.signup.confirmpassword')} required />
                 
                 <div className='buttons'>
-                    <CustomButton type='submit'>SIGN UP</CustomButton>
+                    <CustomButton type='submit'>{t('signin.signup.signup')}</CustomButton>
                 </div>
             </form>
         </SignUpContainer>
