@@ -1,8 +1,11 @@
 import React from 'react';
 import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios';
+import {useTranslation} from 'react-i18next';
+
 
 const StripeCheckoutButton = ({price}) => {
+    const [t, i18n] = useTranslation('common');
     const priceForStripe = price * 100;
     const publishablekey = 'pk_test_6Jv1xPx0eczcDZMfmVVqipdN00dFQ2B4n7';
 
@@ -24,7 +27,7 @@ const StripeCheckoutButton = ({price}) => {
 
     return (
         <StripeCheckout 
-        label='Pay Now'
+        label={t('stripe.paynowbut')}
         name='Andreas Ecommerce'
         billingAddress
         shippingAddress

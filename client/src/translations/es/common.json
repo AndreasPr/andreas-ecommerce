@@ -69,5 +69,16 @@
         "empty_message": "Tu carrito esta vacío",
         "total": "Total",
         "checkout_button": "IR A PAGAR"
+    },
+    "checkout": {
+        "product": "Producto",
+        "description": "Descripción",
+        "quantity": "Cantidad",
+        "price": "Precio",
+        "remove": "Eliminar",
+        "content_payment_credit_card": "La siguiente es la tarjeta de crédito de prueba para su pago 4242 4242 4242 4242 - Fecha de vencimiento: 20/01 - CVV: 123"
+    },
+    "stripe": {
+        "paynowbut": "Pagar ahora"
     }
 }

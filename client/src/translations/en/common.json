@@ -69,5 +69,16 @@
         "empty_message": "Your cart is empty",
         "total": "Total",
         "checkout_button": "GO TO CHECKOUT"
+    },
+    "checkout": {
+        "product": "Product",
+        "description": "Description",
+        "quantity": "Quantity",
+        "price": "Price",
+        "remove": "Remove",
+        "content_payment_credit_card": "The following is the test credit card for your payment 4242 4242 4242 4242 - Expiration date: 01/20 - CVV: 123"
+    },
+    "stripe": {
+        "paynowbut": "Pay Now"
     }
 }
