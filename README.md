@@ -1,5 +1,5 @@
 # Andreas Ecommerce 
-Ecommerce Single-page Application created with React, Node.js and Firebase.
+Ecommerce Single-page Application created with React, Node.js and Firebase.  
 (https://andreas-ecommerce.herokuapp.com/)
 * [General info](#general-info)
 * [Technologies](#technologies)
