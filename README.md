@@ -21,7 +21,7 @@ It is created by using Create React App, State Management, Styling, Routers, Fun
 * Error Boundaries
 * Axios
 * Progressive Web Application (PWA)
-* Express – Node.js
+* Express – Node.js Server
 * Firebase
 * CSS
 * Styled Components
