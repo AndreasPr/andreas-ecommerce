@@ -5,6 +5,7 @@ import {createStructuredSelector} from 'reselect';
 import {selectCartItems, selectCartTotal} from '../../redux/cart/cart.selectors';
 import CheckoutItem from '../../components/checkout-item/checkout-item.component';
 import StripeCheckoutButton from '../../components/stripe-button/stripe-button.component';
+import PaypalButton from '../../components/paypal-button/paypal-button.component';
 import {useTranslation} from 'react-i18next';
 // import {CheckoutPageContainer, CheckoutPageHeader, CheckoutPageHeaderBlock, 
 //     CheckoutPageTotal, CheckoutPageTestWarning} from './checkout.styles';
@@ -70,8 +71,18 @@ return(
             </div>
         </div>
         <div className="row">
+            <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 paypalButton">
+                <PaypalButton price={total} />
+            </div>
+        </div>
+        <div className="row">
             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center infoCard">
                 {t('checkout.content_payment_credit_card')}
+            </div>
+        </div>
+        <div className="row">
+            <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center infoCard">
+                {t('checkout.content_payment_paypal')}
             </div>
         </div>
     </div>
