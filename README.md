@@ -1,5 +1,6 @@
-# Andreas Ecommerce
-Ecommerce Single-page Application created with React, Node.js and Firebase.   
+# Andreas Ecommerce 
+Ecommerce Single-page Application created with React, Node.js and Firebase.  
+(https://andreas-ecommerce.herokuapp.com/)
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Screenshots](#screenshots)
@@ -15,11 +16,12 @@ It is created by using Create React App, State Management, Styling, Routers, Fun
 * React Redux – Redux Saga – Redux Thunk
 * React Hooks
 * React Router
+* React i18next
 * Higher-Order Components (HOC)
 * Error Boundaries
 * Axios
 * Progressive Web Application (PWA)
-* Express – Node.js
+* Express – Node.js Server
 * Firebase
 * CSS
 * Styled Components
@@ -52,6 +54,7 @@ It is created by using Create React App, State Management, Styling, Routers, Fun
 * About Page
 * Email Subscription to newsletter
 * Social Media
+* Translation to different language
 
 ## Project Status
 The project is still being developed.
