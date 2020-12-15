@@ -3,7 +3,8 @@ import './paypal-button.styles.css';
 
 const PaypalButton = ({price}) => {
     const paypal = useRef();
-
+    const pricePaypal = price; 
+    console.log(pricePaypal);
     useEffect(() => {
       window.paypal.Buttons({
           createOrder: (data, actions, err) => {
@@ -14,7 +15,7 @@ const PaypalButton = ({price}) => {
                   description: "Testing description",
                   amount: {
                     currency_code: "USD",
-                    value: price,
+                    value: pricePaypal,
                   },
                 },
               ],

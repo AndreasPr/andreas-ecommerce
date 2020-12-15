@@ -3,7 +3,6 @@ import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios';
 import {useTranslation} from 'react-i18next';
 
-
 const StripeCheckoutButton = ({price}) => {
     const [t] = useTranslation('common');
     const priceForStripe = price * 100;
@@ -31,7 +30,6 @@ const StripeCheckoutButton = ({price}) => {
         name='Andreas Ecommerce'
         billingAddress
         shippingAddress
-        image='https://sendeyo.com/up/d/f3eb2117da'
         description={`Your total is $${price}`}
         amount={priceForStripe}
         panelLabel='Pay Now'
