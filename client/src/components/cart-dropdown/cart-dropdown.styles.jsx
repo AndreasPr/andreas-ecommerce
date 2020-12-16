@@ -32,7 +32,6 @@ export const CartitemsStyles = styled.div`
         width: 270px;
         padding-bottom: 3px;
         bottom: 3px;
-        overflow-x: hidden;
         overflow-y: scroll;
         z-index: 6;
         -webkit-overflow-scrolling: touch; // mobile safari
