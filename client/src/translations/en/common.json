@@ -76,7 +76,7 @@
         "quantity": "Quantity",
         "price": "Price",
         "remove": "Remove",
-        "content_payment_credit_card": "Stripe: The following is the test credit card for your payment 4242 4242 4242 4242 - Expiration date: 01/20 - CVV: 123",
+        "content_payment_credit_card": "Stripe: The following is the test credit card for your payment 4242 4242 4242 4242 - Expiration date: 11/21 - CVV: 123",
         "content_payment_paypal": "Paypal: Your test account name is: sb-2vsfx4093576@personal.example.com and password: .{'X?3uB"
     },
     "stripe": {

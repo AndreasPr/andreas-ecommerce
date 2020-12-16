@@ -76,7 +76,7 @@
         "quantity": "Cantidad",
         "price": "Precio",
         "remove": "Eliminar",
-        "content_payment_credit_card": "La siguiente es la tarjeta de crédito de prueba para su pago 4242 4242 4242 4242 - Fecha de vencimiento: 20/01 - CVV: 123",
+        "content_payment_credit_card": "La siguiente es la tarjeta de crédito de prueba para su pago 4242 4242 4242 4242 - Fecha de vencimiento: 11/21 - CVV: 123",
         "content_payment_paypal": "Paypal: el nombre de su cuenta de prueba es: sb-2vsfx4093576@personal.example.com y contraseña: .{'X?3uB"
     },
     "stripe": {
