@@ -27,6 +27,7 @@ It is created by using Create React App, State Management, Styling, Routers, Fun
 * Styled Components
 * Bootstrap 4
 * Stripe Payment
+* PayPal Payment
 * Heroku
 * EmailJS
 * Npm Package Manager
