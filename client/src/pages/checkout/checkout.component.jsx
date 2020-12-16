@@ -72,7 +72,9 @@ return(
         </div>
         <div className="row">
             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 paypalButton">
+                <div className="paypalContainer">
                 <PaypalButton price={total} />
+                </div>
             </div>
         </div>
         <div className="row">

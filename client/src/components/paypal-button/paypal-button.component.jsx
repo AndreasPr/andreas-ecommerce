@@ -1,46 +1,40 @@
-import React, {useRef, useEffect} from 'react';
-import './paypal-button.styles.css';
+import React from "react";
+import ReactDOM from "react-dom";
 
+const paypalstyle = {
+  height: 40,
+  layout: 'vertical',
+  color: 'gold',
+  shape: 'rect'
+};
+
+const PayPalButton = window.paypal.Buttons.driver("react", { React, ReactDOM });
 const PaypalButton = ({price}) => {
-    const paypal = useRef();
-    const pricePaypal = price; 
-    console.log(pricePaypal);
-    useEffect(() => {
-      window.paypal.Buttons({
-          createOrder: (data, actions, err) => {
-            return actions.order.create({
-              intent: "CAPTURE",
-              purchase_units: [
-                {
-                  description: "Testing description",
-                  amount: {
-                    currency_code: "USD",
-                    value: pricePaypal,
-                  },
-                },
-              ],
-            });
+  const createOrder = (data, actions) =>{
+    return actions.order.create({
+      intent: "CAPTURE",
+      purchase_units: [
+        {
+          description: "Testing description",
+          amount: {
+            currency_code: "USD",
+            value: price,
           },
-          onApprove: async (data, actions) => {
-            const order = await actions.order.capture();
-            alert("You have successfully completed the transaction.")
-            console.log(order);
-          },
-          onError: (err) => {
-            console.log(err);
-          },
-          style: {
-            height: 45,
-            layout: 'vertical',
-            color: 'gold',
-            shape: 'pill'
-          }
-        })
-        .render(paypal.current);
-    }, []);
-  
-    return(
-        <div className="paypalButton" ref={paypal}></div>
-    );
+        },
+      ],
+    });
+  };
+
+  const onApprove = (data, actions) => {
+    return actions.order.capture();
+  };
+
+  return (
+    <PayPalButton style={paypalstyle}
+      createOrder={(data, actions) => createOrder(data, actions)}
+      onApprove={(data, actions) => onApprove(data, actions)}
+    />
+  );
+
 };
 export default PaypalButton;

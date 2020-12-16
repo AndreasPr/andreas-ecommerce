@@ -26,6 +26,10 @@
 .paypalButton{
     padding-top: 1%;
 }
+.paypalContainer{
+    width: 200px;
+    float: right;
+}
 @media screen and (max-width: 768px){
     .headerCheckout{
         display: none;
@@ -35,5 +39,8 @@
     }
     .paypalButton{
         padding-top: 2%;
+    }
+    .infoCard{
+        font-size: 14px;
     }
 }
