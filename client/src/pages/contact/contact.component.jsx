@@ -37,19 +37,17 @@ const Contact = ({contactStart, getSuccessOrFail}) => {
         setContactInfo({...contactInfo, [name]:value});
     };
 
-    //const [renderGetSuccessOrFail, setRenderGetSuccessOrFail] = useState(getSuccessOrFail);
-
-    useEffect(() => {
-        const abortController = new AbortController();
-        //const signal = abortController.signal; 
+    // useEffect(() => {
+    //     const abortController = new AbortController();
+    //     //const signal = abortController.signal; 
         
-        setTimeout(() => {
-            //setRenderGetSuccessOrFail(undefined);
+    //     setTimeout(() => {
+    //         //setRenderGetSuccessOrFail(undefined);
             
-            abortController.abort();
-            console.log("5 seconds");
-        }, 5000);
-    }, []);
+    //         abortController.abort();
+    //         console.log("5 seconds");
+    //     }, 5000);
+    // }, []);
 
 
     return(
