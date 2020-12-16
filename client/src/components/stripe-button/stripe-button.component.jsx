@@ -10,7 +10,7 @@ const StripeCheckoutButton = ({price}) => {
 
     const onToken = token => {
         axios({
-            url: 'payment',
+            url: '/payment',
             method: 'post',
             data: {
                 amount: priceForStripe,
@@ -19,7 +19,7 @@ const StripeCheckoutButton = ({price}) => {
         }).then(response => {
             alert("Payment success");
         }).catch(error => {
-            console.log('Payment error: ', JSON.parse(error));
+            // console.log('Payment error: ', JSON.parse(error));
             alert("Error with the payment. Please try again.");
         });
     };
@@ -30,6 +30,7 @@ const StripeCheckoutButton = ({price}) => {
         name='Andreas Ecommerce'
         billingAddress
         shippingAddress
+        image='https://svgshare.com/i/CUz.svg'
         description={`Your total is $${price}`}
         amount={priceForStripe}
         panelLabel='Pay Now'

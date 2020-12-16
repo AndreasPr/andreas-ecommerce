@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import {createStructuredSelector} from 'reselect';
 import {selectCartItems, selectCartTotal} from '../../redux/cart/cart.selectors';
 import CheckoutItem from '../../components/checkout-item/checkout-item.component';
-import StripeCheckoutButton from '../../components/stripe-button/stripe-button.component';
+import Index from '../../components/stripe-button/stripe-button.component';
 import PaypalButton from '../../components/paypal-button/paypal-button.component';
 import {useTranslation} from 'react-i18next';
 // import {CheckoutPageContainer, CheckoutPageHeader, CheckoutPageHeaderBlock, 
@@ -67,7 +67,7 @@ return(
         </div>
         <div className="row">
             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-right stripeButton">
-                <StripeCheckoutButton price={total} />
+                <Index price={total} />
             </div>
         </div>
         <div className="row">

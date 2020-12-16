@@ -42,11 +42,12 @@ app.listen(port, error => {
     console.log('Server is running on the port ' + port);
 });
 
+
 app.post('/payment', (request, response) => {
     const body = {
         source: request.body.token.id,
         amount: request.body.amount,
-        currency: 'USD'
+        currency: 'usd'
     };
 
     stripe.charges.create(body, (stripeError, stripeResponse) => {
