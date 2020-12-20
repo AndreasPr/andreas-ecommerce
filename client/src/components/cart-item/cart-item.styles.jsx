@@ -11,6 +11,7 @@ export const CartItemContainer = styled.div`
 
 export const CartItemImageDivStyle = styled.div`
     display: flex;
+    flex-shrink: 1;
 `;
 
 export const CartItemImageStyles = styled.img`
@@ -24,10 +25,15 @@ export const CartItemDetails = styled.div`
     width: 70%;
     display: flex;
     flex-direction: column;
-    /* align-items: flex-start; */
-    align-self: flex-start;
+    align-items: flex-start;
+    /* align-self: flex-start; */
     justify-content: center;
     padding: 10px 20px;
+
+
+
+    flex-shrink: 1;
+
 `;
 
 export const CartItemName = styled.span`
