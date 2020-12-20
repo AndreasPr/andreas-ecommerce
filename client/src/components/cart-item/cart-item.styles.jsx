@@ -6,24 +6,29 @@ export const CartItemContainer = styled.div`
     height: 80px;
     margin-bottom: 15px;
     -webkit-overflow-scrolling: touch;
-
-
-    /* flex-direction: column; */
 `;
 
-export const CartItemImageStyles = styled.img`
-    width: 25%;
-    height: 100%;
 
 
 
 
-    
+
+export const CartItemImageDivStyle = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+`;
 
+
+
+
+
+
+export const CartItemImageStyles = styled.img`
+    width: 45%;
+    /* width: 25%; */
+    height: 100%;
 `;
 
 export const CartItemDetails = styled.div`
