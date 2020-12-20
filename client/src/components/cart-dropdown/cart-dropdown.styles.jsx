@@ -19,7 +19,10 @@ export const CartdropdownContainer = styled.div`
         right: 0px;
         -webkit-overflow-scrolling: touch;
         overflow-y: scroll;
-
+        
+        
+        display: flex;
+        align-items: stretch;
     }
 `;
 
@@ -39,6 +42,7 @@ export const CartitemsStyles = styled.div`
         z-index: 6;
         -webkit-overflow-scrolling: touch; // mobile safari
         /* height: calc(100% + 1px); */
+        display: flex;
     }
 
 `;
