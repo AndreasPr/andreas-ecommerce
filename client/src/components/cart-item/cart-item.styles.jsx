@@ -6,6 +6,7 @@ export const CartItemContainer = styled.div`
     height: 80px;
     margin-bottom: 15px;
     -webkit-overflow-scrolling: touch;
+    height: auto;
 `;
 
 
