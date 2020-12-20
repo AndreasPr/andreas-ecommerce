@@ -29,6 +29,7 @@ export const CartItemImageStyles = styled.img`
     width: 45%;
     /* width: 25%; */
     height: 100%;
+    justify-self: flex-start;
 `;
 
 export const CartItemDetails = styled.div`
