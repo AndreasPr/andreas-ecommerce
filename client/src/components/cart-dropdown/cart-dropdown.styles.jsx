@@ -14,15 +14,14 @@ export const CartdropdownContainer = styled.div`
     right: 20px;
     z-index: 5;
 
-    @media (max-width: 450px) and (min-width: 350px) {
+    @media (max-width: 450px) and (min-width: 350px) and (-webkit-min-device-pixel-ratio: 2) {
         width: 320px;
         right: 0px;
         -webkit-overflow-scrolling: touch;
         overflow-y: scroll;
-        
-        
-        display: flex;
-        align-items: stretch;
+            
+        /* display: flex;
+        align-items: stretch; */
     }
 `;
 
@@ -33,7 +32,7 @@ export const CartitemsStyles = styled.div`
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch; // mobile safari
 
-    @media (max-width: 450px) and (min-width: 350px) {
+    @media (max-width: 450px) and (min-width: 350px) and (-webkit-min-device-pixel-ratio: 2) {
         height: 250px;
         width: 270px;
         padding-bottom: 3px;
@@ -42,7 +41,7 @@ export const CartitemsStyles = styled.div`
         z-index: 6;
         -webkit-overflow-scrolling: touch; // mobile safari
         /* height: calc(100% + 1px); */
-        display: flex;
+        /* display: flex; */
     }
 
 `;
