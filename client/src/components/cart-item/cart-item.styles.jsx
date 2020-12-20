@@ -16,9 +16,7 @@ export const CartItemContainer = styled.div`
 
 export const CartItemImageDivStyle = styled.div`
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+    align-items: stretch;
 `;
 
 
