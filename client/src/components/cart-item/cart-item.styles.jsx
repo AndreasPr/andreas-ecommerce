@@ -11,6 +11,8 @@ export const CartItemContainer = styled.div`
 export const CartItemImageStyles = styled.img`
     width: 25%;
     height: 100%;
+    display: flex;
+    align-items: flex-start; /* new */
 `;
 
 export const CartItemDetails = styled.div`
