@@ -24,7 +24,8 @@ export const CartItemDetails = styled.div`
     width: 70%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    /* align-items: flex-start; */
+    align-self: flex-start;
     justify-content: center;
     padding: 10px 20px;
 `;
