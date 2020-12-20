@@ -17,6 +17,9 @@ export const CartdropdownContainer = styled.div`
     @media (max-width: 450px) and (min-width: 350px) {
         width: 320px;
         right: 0px;
+        -webkit-overflow-scrolling: touch;
+        overflow-y: scroll;
+
     }
 `;
 
