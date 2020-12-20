@@ -9,26 +9,15 @@ export const CartItemContainer = styled.div`
     height: auto;
 `;
 
-
-
-
-
-
 export const CartItemImageDivStyle = styled.div`
     display: flex;
-    align-items: stretch;
 `;
 
-
-
-
-
-
 export const CartItemImageStyles = styled.img`
-    width: 45%;
+    width: 75%;
     /* width: 25%; */
-    height: 100%;
-    justify-self: flex-start;
+    /* height: 100%; */
+    align-self: flex-start;
 `;
 
 export const CartItemDetails = styled.div`
