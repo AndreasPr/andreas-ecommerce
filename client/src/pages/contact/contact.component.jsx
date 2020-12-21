@@ -3,15 +3,18 @@ import React, {useState, useEffect} from 'react';
 import {ContactContainer, ContactTitle} from './contact.styles';
 import FormInput from '../../components/form-input/form-input.component';
 import CustomButton from '../../components/custom-button/custom-button.component';
-import {contactStart} from '../../redux/contact/contact.actions';
+import {contactStart, updateContactMessageStatus} from '../../redux/contact/contact.actions';
 import {connect} from 'react-redux';
 import {createStructuredSelector} from 'reselect';
 import {getSuccessOrFail} from '../../redux/contact/contact.selectors';
 import SuccessfulMessage from '../../components/successful-message/successful-message.component';
 import {useTranslation} from 'react-i18next';
 
-const Contact = ({contactStart, getSuccessOrFail}) => {
+const Contact = ({contactStart, getSuccessOrFail, updateContactMessageStatus}) => {
     const [t] = useTranslation('common');
+
+    const [visibility, setVisibility] = useState(false);
+
     const [contactInfo, setContactInfo] = useState({
         firstname: '',
         lastname: '',
@@ -37,18 +40,18 @@ const Contact = ({contactStart, getSuccessOrFail}) => {
         setContactInfo({...contactInfo, [name]:value});
     };
 
-    // useEffect(() => {
-    //     const abortController = new AbortController();
-    //     //const signal = abortController.signal; 
-        
-    //     setTimeout(() => {
-    //         //setRenderGetSuccessOrFail(undefined);
-            
-    //         abortController.abort();
-    //         console.log("5 seconds");
-    //     }, 5000);
-    // }, []);
+    useEffect(() => {
 
+        if(getSuccessOrFail){
+            setVisibility(true);
+        }
+        
+        setTimeout(() => {
+            setVisibility(false);
+            getSuccessOrFail = false;
+            updateContactMessageStatus(getSuccessOrFail);
+        }, 5000);
+    }, [getSuccessOrFail]);
 
     return(
         <ContactContainer>
@@ -63,9 +66,11 @@ const Contact = ({contactStart, getSuccessOrFail}) => {
                     <CustomButton type="submit">{t('contact.submit')}</CustomButton>
                 </div>
                 {
-                    getSuccessOrFail
-                    ? <SuccessfulMessage /> 
-                    : null
+                    // visibility
+                    // ? <SuccessfulMessage /> 
+                    // : null
+                    visibility && <SuccessfulMessage /> 
+                   
                 }
             </form>
         </ContactContainer>
@@ -74,7 +79,8 @@ const Contact = ({contactStart, getSuccessOrFail}) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-    contactStart: (contactInfo) => dispatch(contactStart(contactInfo))
+    contactStart: (contactInfo) => dispatch(contactStart(contactInfo)),
+    updateContactMessageStatus: (getSuccessOrFail) => dispatch(updateContactMessageStatus(getSuccessOrFail))
 });
 
 const mapStateToProps = createStructuredSelector({

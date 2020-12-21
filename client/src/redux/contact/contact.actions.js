@@ -14,3 +14,8 @@ export const contactFailure = (error) => ({
     type: ContactTypes.CONTACT_FAILURE,
     payload: error
 });
+
+export const updateContactMessageStatus = (contactUpdate) => ({
+    type: ContactTypes.CONTACT_STATUS_UPDATE,
+    payload: contactUpdate
+});

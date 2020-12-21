@@ -7,6 +7,7 @@ export function* contactMessage({payload: {firstname, lastname, email, message}}
     try{
         const info = addContactInfo({firstname, lastname, email, message})
         .then(() => {
+            // alert("Your message has been submitted successfully!");
         });
         yield put(contactSuccess({info}));
     }catch(error){

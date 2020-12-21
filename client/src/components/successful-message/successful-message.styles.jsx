@@ -7,8 +7,8 @@ export const SuccessfulContainer = styled.div`
     color: white;
     text-align: center;
     border-radius: 5px;
-    animation: cssAnimation 0s 5s forwards;
-    visibility: visible;
+    /* animation: cssAnimation 0s 5s forwards;
+    visibility: visible; */
 
     @keyframes cssAnimation {
         to   { visibility: hidden; }

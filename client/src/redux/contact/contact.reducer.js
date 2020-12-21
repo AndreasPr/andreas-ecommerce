@@ -25,6 +25,11 @@ const contactReducer = (state = INITIAL_STATE, action) => {
                 error: action.payload,
                 successOrFail: false
             };
+        case ContactTypes.CONTACT_STATUS_UPDATE:
+            return {
+                ...state,
+                successOrFail: false
+            };
         default:
             return state;
     }
