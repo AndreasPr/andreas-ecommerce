@@ -5,7 +5,8 @@ import {addContactInfo} from '../../firebase/firebase.utils';
 
 export function* contactMessage({payload: {firstname, lastname, email, message}}){
     try{
-        const info = addContactInfo({firstname, lastname, email, message}).then(() => {
+        const info = addContactInfo({firstname, lastname, email, message})
+        .then(() => {
         });
         yield put(contactSuccess({info}));
     }catch(error){
