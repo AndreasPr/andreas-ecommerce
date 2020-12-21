@@ -69,7 +69,7 @@ const Contact = ({contactStart, getSuccessOrFail, updateContactMessageStatus}) =
                     // visibility
                     // ? <SuccessfulMessage /> 
                     // : null
-                    visibility && <SuccessfulMessage /> 
+                    visibility && <SuccessfulMessage content = "Your message has been submitted successfully!"/> 
                    
                 }
             </form>

@@ -1,8 +1,8 @@
 import React from 'react';
 import {SuccessfulContainer} from './successful-message.styles';
-const SuccessfulMessage = () => (
+const SuccessfulMessage = ({content}) => (
         <SuccessfulContainer>
-            Your message has been submitted successfully!
+            {content}
         </SuccessfulContainer>
 );
 export default SuccessfulMessage;

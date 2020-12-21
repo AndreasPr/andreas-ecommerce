@@ -1,18 +1,31 @@
-import React from 'react';
+import React, {useState, useCallback, useEffect} from 'react';
 import './checkout.styles.css';
 import {connect} from 'react-redux';
 import {createStructuredSelector} from 'reselect';
 import {selectCartItems, selectCartTotal} from '../../redux/cart/cart.selectors';
 import CheckoutItem from '../../components/checkout-item/checkout-item.component';
-import Index from '../../components/stripe-button/stripe-button.component';
+import StripeCheckoutButton from '../../components/stripe-button/stripe-button.component';
 import PaypalButton from '../../components/paypal-button/paypal-button.component';
+import SuccessfulMessage from '../../components/successful-message/successful-message.component';
 import {useTranslation} from 'react-i18next';
 // import {CheckoutPageContainer, CheckoutPageHeader, CheckoutPageHeaderBlock, 
 //     CheckoutPageTotal, CheckoutPageTestWarning} from './checkout.styles';
 
 const CheckoutPage = ({cartItems, total}) => {
+    const [visibility, setVisibility] = useState(false);
+
+    const onSuccessPayment = useCallback(() => {
+        setVisibility(true);
+    },[]);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setVisibility(false);
+        }, 10000);
+    }, [visibility]);
+
     const [t] = useTranslation('common');
-return(
+    return(
     // <CheckoutPageContainer>
     //      <CheckoutPageHeader>
     //          <CheckoutPageHeaderBlock>
@@ -40,7 +53,7 @@ return(
     //      <CheckoutPageTestWarning>
     //        The following is the test credit card for your payment 
     //        <br/>
-    //        4242 4242 4242 4242 - Expiration date: 01/20 - CVV: 123
+    //        4242 4242 4242 4242 - Expiration date: 11/21 - CVV: 123
     //      </CheckoutPageTestWarning>
     //      <StripeCheckoutButton price={total} />
     // </CheckoutPageContainer>
@@ -59,6 +72,14 @@ return(
                     <CheckoutItem key={cartItem.id} cartItem={cartItem} />
                 ))
             }
+            
+        <div className="row">
+            <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center">
+                {
+                    visibility ? <SuccessfulMessage content="Successful Payment! Thank you very much!"/> : null
+                }
+            </div>
+        </div>
         <div className="row">
             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-right totalPrice">
                 <span>Total: </span>
@@ -67,7 +88,7 @@ return(
         </div>
         <div className="row">
             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-right stripeButton">
-                <Index price={total} />
+                <StripeCheckoutButton price={total} onSuccessPayment={onSuccessPayment}/>
             </div>
         </div>
         <div className="row">
