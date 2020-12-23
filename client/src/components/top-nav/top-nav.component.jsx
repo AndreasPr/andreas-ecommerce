@@ -45,7 +45,7 @@ return(
                 <div className="col-1 col-sm-2 col-md-1 col-lg-1 col-xl-1 text-left cart-icon" >
                     <CartIcon />   
                     {
-                        hidden ? null : <CartDropdown />
+                        hidden ? null : <CartDropdown/>
                     }
                 </div>
 
