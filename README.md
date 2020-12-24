@@ -22,7 +22,7 @@ It is created by using Create React App, State Management, Styling, Routers, Fun
 * Axios
 * Progressive Web Application (PWA)
 * Express – Node.js Server
-* Firebase
+* Firebase - Firestore
 * CSS
 * Styled Components
 * Bootstrap 4
