@@ -55,9 +55,6 @@ const CollectionItemPage = ({collectionItem, match, location, addItem }) => {
                     <div className="addToCartBtnContainer">
                         <button className="addToCartBtn" onClick={() => addItem(collectionItem)}>ADD TO CART</button>
                     </div>
-                    <div className="categoryContainer">
-                        <span className="categoryTitle">Category:</span><span> laalal</span>
-                    </div>
                     <div className="skuContainer">
                         <span className="skuTitle">SKU: </span><span className="skuContent">N/A</span>
                     </div>

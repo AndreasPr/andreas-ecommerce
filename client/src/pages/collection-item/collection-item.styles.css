@@ -117,14 +117,6 @@
 .addToCartBtn:hover{
     opacity: 0.7;
 }
-.categoryContainer{
-    padding-top: 10px;
-    padding-bottom: 20px;
-    font-size: 16px;
-}
-.categoryTitle{
-    font-weight: bold;
-}
 .colorTitle{
     font-weight: bold;
 }
@@ -139,6 +131,7 @@
     padding-right: 8px;
 }
 .skuContainer{
+    padding-top: 10px;
     padding-bottom: 20px;
 }
 .shareContainer{
