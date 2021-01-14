@@ -15,7 +15,7 @@ It is created by using Create React App, State Management, Styling, Routers, Fun
 * React JS
 * Single-page Application (SPA)
 * Functional Components
-* React Redux – Redux Saga – Redux Thunk
+* React Redux – Redux Saga
 * React Hooks
 * React Router
 * React i18next
@@ -23,16 +23,17 @@ It is created by using Create React App, State Management, Styling, Routers, Fun
 * Error Boundaries
 * Axios
 * Progressive Web Application (PWA)
-* Express – Node.js Server
+* Express.js – Node.js Server
 * Firebase - Firestore
 * CSS
 * Styled Components
 * Bootstrap 4
 * Stripe Payment
 * PayPal Payment
-* Heroku
+* Heroku Cloud
 * EmailJS
 * Npm Package Manager
+* Continuous integration - CircleCI
 
 ## Screenshots
 ![photo1](https://github.com/AndreasPr/andreas-ecommerce/blob/master/photo1.PNG)
