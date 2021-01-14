@@ -1,13 +1,14 @@
 import React from 'react';
 import './collection-item.styles.css';
 import {connect} from 'react-redux';
-//import {selectCollection} from '../../redux/shop/shop.selectors';
+import {selectCollectionItem} from '../../redux/shop/shop.selectors';
 import {addItem} from '../../redux/cart/cart.actions';
 
-const CollectionItemPage = ({location, addItem}) => {
-    const item = location.state;
-    const {name, price, imageUrl, title} = location.state;
-    
+const CollectionItemPage = ({collectionItem, match, location, addItem }) => {
+
+    const {imageUrl, name, price} = collectionItem;
+    // const item = location.state;
+    // const {name, price, imageUrl, title} = location.state;
     return (
         <div className="container-fluid containerProductPage">
             <div className="row">
@@ -52,10 +53,10 @@ const CollectionItemPage = ({location, addItem}) => {
                     </div>
                     <div></div>
                     <div className="addToCartBtnContainer">
-                        <button className="addToCartBtn" onClick={() => addItem(item)}>ADD TO CART</button>
+                        <button className="addToCartBtn" onClick={() => addItem(collectionItem)}>ADD TO CART</button>
                     </div>
                     <div className="categoryContainer">
-                        <span className="categoryTitle">Category:</span><span> {title}</span>
+                        <span className="categoryTitle">Category:</span><span> laalal</span>
                     </div>
                     <div className="skuContainer">
                         <span className="skuTitle">SKU: </span><span className="skuContent">N/A</span>
@@ -73,14 +74,15 @@ const CollectionItemPage = ({location, addItem}) => {
             </div>
         </div>
     );
+
 };
 
-// const mapStateToProps = (state, ownProps) => ({
-//     collectionItem: selectCollection(ownProps.match.params.collectionId)(state)
-// });
-
-const mapDispatchToProps = dispatch => ({
-    addItem: item => dispatch(addItem(item))
+const mapStateToProps = (state, ownProps) => ({
+    collectionItem: selectCollectionItem(ownProps.match.params.collectionId, ownProps.match.params.id)(state)
 });
 
-export default connect(null,mapDispatchToProps)(CollectionItemPage);
+const mapDispatchToProps = dispatch => ({
+    addItem: item => dispatch(addItem(item)),
+});
+
+export default connect(mapStateToProps,mapDispatchToProps)(CollectionItemPage);

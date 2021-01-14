@@ -95,11 +95,22 @@ export const convertCollectionsSnapshotToMap = (collections) => {
             items
         }
     });
+    
     return transformedCollection.reduce((accumulator, collection) => {
         accumulator[collection.title.toLowerCase()] = collection; 
         return accumulator;
     }, {});
 };
+
+// export const returnTheDocument = (documentItem, nameOfItem) => {
+//         let result;
+//         documentItem.forEach(doc => {
+//             result =  doc.data().items.filter(item => item.name === nameOfItem)[0]; 
+//         });
+//         return {
+//             result
+//         }
+// };
 
 export const getCurrentUser = () => {
     return new Promise((resolve, reject) => {

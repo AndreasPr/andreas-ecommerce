@@ -7,7 +7,7 @@ import {Route} from 'react-router-dom';
 
 const CollectionsOverviewContainer = lazy(() => import('../../components/collections-overview/collections-overview.container'));
 const CollectionPageContainer = lazy(() => import('../collection/collection.container'));
-const CollectionItemPage = lazy(() => import('../collection-item/collection-item.component'));
+const CollectionItemPageContainer = lazy(() => import('../collection-item/collection-item.container'));
 
 
 const ShopPage = ({fetchCollectionsStart, match}) => {
@@ -22,7 +22,7 @@ const ShopPage = ({fetchCollectionsStart, match}) => {
                 <Suspense fallback={<Spinner/>}>
                     <Route exact path={`${match.path}`} component={CollectionsOverviewContainer} />
                     <Route exact path={`${match.path}/:collectionId`} component={CollectionPageContainer} />
-                    <Route exact path={`${match.path}/:collectionId/:id`} component={CollectionItemPage} />
+                    <Route exact path={`${match.path}/:collectionId/:id`} component={CollectionItemPageContainer} />
                 </Suspense>
             
             {/* When you use the component props, the router uses React.createElement to create a new React element

@@ -10,7 +10,7 @@ import {firestore, convertCollectionsSnapshotToMap} from '../../firebase/firebas
 
 //This action switches our reducers "isFetching" state 
 export const fetchCollectionsStart = () => ({
-    type: ShopActionTypes.FETCH_COLLECTIONS_START,
+    type: ShopActionTypes.FETCH_COLLECTIONS_START
 });
 
 export const fetchCollectionsSuccess = (collectionsMap) => ({
@@ -23,7 +23,7 @@ export const fetchCollectionsFailure = (errorMessage) => ({
     payload: errorMessage
 });
 
-//This is the actual function that we pass into components to begin this process
+//This is the actual function that we pass into components to begin this process, in case we use Redux Thunk
 export const fetchCollectionsStartAsync = () => {
     // Return the function that gets a dispatch
     return dispatch => {

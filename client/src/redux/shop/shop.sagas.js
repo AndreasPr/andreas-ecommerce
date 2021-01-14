@@ -3,7 +3,7 @@ import ShopActionTypes from './shop.types';
 import {firestore, convertCollectionsSnapshotToMap} from '../../firebase/firebase.utils';
 import {fetchCollectionsSuccess, fetchCollectionsFailure} from './shop.actions';
 
-// Asynchronous logic of saga
+// Asynchronous logic of redux-saga
 export function* fetchCollectionsAsync(){
 
     const collectionRef = firestore.collection('collections');
@@ -34,6 +34,20 @@ export function* fetchCollectionsAsync(){
         //     dispatch(fetchCollectionsSuccess(collectionsMap));
         // }).catch(error => dispatch(fetchCollectionsFailure(error.message)));
 }
+
+// export function* fetchCollectionItemAsync(collectionId){
+//     console.log("CollectionId from params: ",collectionId.collectionId.charAt(0).toUpperCase() + collectionId.collectionId.slice(1));
+//     const docRef = firestore.collection('collections').where('title', '==', collectionId.collectionId.charAt(0).toUpperCase() + collectionId.collectionId.slice(1));
+    
+//     try{
+//         const snapShot = yield docRef.get();
+ 
+//         const docMap = yield call(returnTheDocument, snapShot, collectionId.id); 
+//         yield put(fetchCollectionItemSuccess(docMap));
+//     }catch(error){
+//         yield put(fetchCollectionItemFailure(error.message));
+//     }
+// }
 
 export function* fetchCollectionsStart(){
     // We use takeLatest to start a new fetchCollectionsAsync task 

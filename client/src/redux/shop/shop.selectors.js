@@ -9,30 +9,10 @@ export const selectCollection = collectionUrlParam => createSelector(
     collections => (collections ? collections[collectionUrlParam] : null)
 );
 
-
-//------------------------------------------------------------
-
-export const selectCollectionItem = collectionItemUrlParam => createSelector(
-    [selectCollections], 
-    collection => (collection ? collection.title : null)
-    
-//Object.keys(collection)
-
-    // {
-    //     if (typeof Object.keys(collection[collectionUrlParam]) !== 'undefined' && Object.keys(collection[collectionUrlParam]).length > 0) {
-            
-    //     }
-    // }
-
+export const selectCollectionItem = (collectionUrlParamCollectionId, collectionUrlParamProductId) => createSelector(
+    [selectCollections],
+    collections => (collections ? collections[collectionUrlParamCollectionId].items.filter(item => item.name === collectionUrlParamProductId)[0] : null)
 );
-
-
-// export const selectCollectionItem = createSelector(
-//     [selectCollection],
-//     getCurrentCollectionItem,
-//     (collection, collectionItem) => collection.filter() 
-// );
-//------------------------------------------------------------
 
 export const selectCollectionsForPreview = createSelector(
     [selectCollections], 

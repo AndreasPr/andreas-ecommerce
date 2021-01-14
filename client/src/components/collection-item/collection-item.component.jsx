@@ -36,7 +36,7 @@ import {addItem} from '../../redux/cart/cart.actions';
 const CollectionItem = ({item, title, addItem, history, match, routeName, itemNameRoute, collectionItem}) => {
     //onClick={() => history.push(`${name}`)}
     const {id, name, price, imageUrl} = item;
-    console.log(match.url)
+    // console.log("Match url: ",match.url);
     return (
         <div className="containerStyle">
             
