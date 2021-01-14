@@ -1,8 +1,9 @@
 [![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://circleci.com/gh/AndreasPr/andreas-ecommerce)  
 
 # Andreas Ecommerce 
-Ecommerce Single-page Application created with React, Node.js and Firebase.  
 (https://andreas-ecommerce.herokuapp.com/)
+
+Ecommerce Single-page Application created with React, Node.js and Firebase.  
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Screenshots](#screenshots)
