@@ -3,7 +3,6 @@ import MenuItem from '../menu-item/menu-item.component';
 import {connect} from 'react-redux';
 import {createStructuredSelector} from 'reselect';
 import {selectDirectorySection} from '../../redux/directory/directory.selectors';
-import './directory.styles.css';
 
 const Directory = ({sections}) =>(
       <div className="container-fluid directoryContainer">
