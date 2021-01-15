@@ -1,6 +1,9 @@
+[![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://circleci.com/gh/AndreasPr/andreas-ecommerce)  
+
 # Andreas Ecommerce 
-Ecommerce Single-page Application created with React, Node.js and Firebase.  
 (https://andreas-ecommerce.herokuapp.com/)
+
+Ecommerce Single-page Application created with React, Node.js and Firebase.  
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Screenshots](#screenshots)
@@ -8,12 +11,12 @@ Ecommerce Single-page Application created with React, Node.js and Firebase.
 * [Project Status](#project-status)
 
 ## General info
-It is created by using Create React App, State Management, Styling, Routers, Functional Components, Hooks and bootstrapping sample data in order to present the features of the ecommerce application and, in parallel, it is implemented the Stripe API to achieve online payments. 
+It is created by using Create React App, State Management, Styling, Routers, Functional Components, Hooks and bootstrapping sample data in order to present the features of the ecommerce application and, in parallel, it is implemented the Stripe API and the PayPal to achieve online payments. 
 ## Technologies
 * React JS
 * Single-page Application (SPA)
 * Functional Components
-* React Redux – Redux Saga – Redux Thunk
+* React Redux – Redux Saga
 * React Hooks
 * React Router
 * React i18next
@@ -21,16 +24,17 @@ It is created by using Create React App, State Management, Styling, Routers, Fun
 * Error Boundaries
 * Axios
 * Progressive Web Application (PWA)
-* Express – Node.js Server
+* Express.js – Node.js Server
 * Firebase - Firestore
 * CSS
 * Styled Components
 * Bootstrap 4
 * Stripe Payment
 * PayPal Payment
-* Heroku
+* Heroku Cloud
 * EmailJS
 * Npm Package Manager
+* Continuous integration - CircleCI
 
 ## Screenshots
 ![photo1](https://github.com/AndreasPr/andreas-ecommerce/blob/master/photo1.PNG)
