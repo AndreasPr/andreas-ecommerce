@@ -2,10 +2,10 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import './footer.styles.css';
 import mainLogo  from '../../assets/andreas.png';
-import {ReactComponent as ArmourLogo}  from '../../assets/armour-logo.svg';
-import {ReactComponent as CoachLogo}  from '../../assets/coach-logo.svg';
-import {ReactComponent as GapLogo}  from '../../assets/gap-logo.svg';
-import {ReactComponent as HilfigerLogo}  from '../../assets/hilfiger-logo.svg';
+// import {ReactComponent as ArmourLogo}  from '../../assets/armour-logo.svg';
+// import {ReactComponent as CoachLogo}  from '../../assets/coach-logo.svg';
+// import {ReactComponent as GapLogo}  from '../../assets/gap-logo.svg';
+// import {ReactComponent as HilfigerLogo}  from '../../assets/hilfiger-logo.svg';
 import Subscription from '../subscription/subscription.component';
 import {useTranslation} from 'react-i18next';
 
@@ -16,16 +16,16 @@ return(
         <div className="container-fluid">
             <div className="row logoForFooter">
                 <div className="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-2 ml-xl-auto text-center armourLogo">
-                    <ArmourLogo className="logo"/>
+                     {/* <ArmourLogo className="logo"/> */}
                 </div>
                 <div className="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-3 text-center coachLogo">
-                    <CoachLogo className="logo"/>
+                    {/* <CoachLogo className="logo"/> */}
                 </div>
                 <div className="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-3 text-center gapLogo">
-                    <GapLogo className="logo"/>
+                    {/* <GapLogo className="logo"/> */}
                 </div>
                 <div className="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-2 mr-xl-auto text-center hilfigerLogo">
-                    <HilfigerLogo className="logo"/>
+                    {/* <HilfigerLogo className="logo"/> */}
                 </div>
             </div>
             <div className="row infoForFooter">
