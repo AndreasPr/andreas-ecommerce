@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-
 import {ContactContainer, ContactTitle} from './contact.styles';
 import FormInput from '../../components/form-input/form-input.component';
 import CustomButton from '../../components/custom-button/custom-button.component';

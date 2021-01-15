@@ -9,7 +9,7 @@
     width: 100%;
     justify-content: center;
     align-items: center;
-    background-image: url('../../assets/aboutbackground.svg');
+    background-image: url('https://i.ibb.co/GHBVjwZ/aboutbackground.jpg');
     height: 130px;
     font-size: 2.90rem;
     font-weight: 500;
@@ -57,6 +57,6 @@
     width: 100px;
     height: 5px;
     border: none;
-    background-color: #e6e600;
-    color:  #e6e600;
+    background-color: #04326d;
+    color:  #04326d;
 }

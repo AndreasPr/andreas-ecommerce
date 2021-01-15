@@ -1,5 +1,4 @@
 import React from 'react';
-//import './cart-item.styles.scss';
 
 import {CartItemContainer, CartItemImageStyles, CartItemImageDivStyle, CartItemDetails, CartItemName, CartItemMultiple} from './cart-item.styles';
 

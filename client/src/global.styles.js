@@ -19,6 +19,4 @@ a {
 *{
     box-sizing: border-box;
 }
-
-
 `;

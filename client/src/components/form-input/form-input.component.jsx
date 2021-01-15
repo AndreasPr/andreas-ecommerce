@@ -1,7 +1,5 @@
 import React from 'react';
-//import './form-input.styles.scss';
-import {FormInputGroupStyles, 
-    FormInputInputTag, FormInputLabel} from './form-input.styles';
+import {FormInputGroupStyles, FormInputInputTag, FormInputLabel} from './form-input.styles';
 
 const FormInput = ({handleChange, label, ...otherProps}) => (
     <FormInputGroupStyles>

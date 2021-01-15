@@ -8,8 +8,6 @@ import StripeCheckoutButton from '../../components/stripe-button/stripe-button.c
 import PaypalButton from '../../components/paypal-button/paypal-button.component';
 import SuccessfulMessage from '../../components/successful-message/successful-message.component';
 import {useTranslation} from 'react-i18next';
-// import {CheckoutPageContainer, CheckoutPageHeader, CheckoutPageHeaderBlock, 
-//     CheckoutPageTotal, CheckoutPageTestWarning} from './checkout.styles';
 
 const CheckoutPage = ({cartItems, total}) => {
     const [visibility, setVisibility] = useState(false);
@@ -26,38 +24,6 @@ const CheckoutPage = ({cartItems, total}) => {
 
     const [t] = useTranslation('common');
     return(
-    // <CheckoutPageContainer>
-    //      <CheckoutPageHeader>
-    //          <CheckoutPageHeaderBlock>
-    //             <span>Product</span>
-    //          </CheckoutPageHeaderBlock>
-    //          <CheckoutPageHeaderBlock>
-    //             <span>Description</span>
-    //          </CheckoutPageHeaderBlock>
-    //          <CheckoutPageHeaderBlock>
-    //             <span>Quantity</span>
-    //          </CheckoutPageHeaderBlock>
-    //          <CheckoutPageHeaderBlock>
-    //             <span>Price</span>
-    //          </CheckoutPageHeaderBlock>
-    //          <CheckoutPageHeaderBlock>
-    //             <span>Remove</span>
-    //          </CheckoutPageHeaderBlock>
-    //      </CheckoutPageHeader>
-    //      {
-    //          cartItems.map(cartItem => <CheckoutItem key={cartItem.id} cartItem={cartItem} />)
-    //      }
-    //      <CheckoutPageTotal>
-    //          <span>Total: ${total}</span>
-    //      </CheckoutPageTotal>
-    //      <CheckoutPageTestWarning>
-    //        The following is the test credit card for your payment 
-    //        <br/>
-    //        4242 4242 4242 4242 - Expiration date: 11/21 - CVV: 123
-    //      </CheckoutPageTestWarning>
-    //      <StripeCheckoutButton price={total} />
-    // </CheckoutPageContainer>
-
     <div className="container-fluid containerCheckout">
         <div className="row headerCheckout">
             <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">{t('checkout.product')}</div>

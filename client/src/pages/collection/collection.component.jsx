@@ -5,10 +5,6 @@ import CollectionItem from '../../components/collection-item/collection-item.com
 import {selectCollection} from '../../redux/shop/shop.selectors';
 import {connect} from 'react-redux';
 
-
-//import {CollectionPageContainer, CollectionPageTitle, CollectionPageItems} from './collection.styles';
-
-
 const CollectionPage = ({match, collection}) => {
     // Destructuring Assignment, which on the left-hand side of the assignment we define what 
     // values to unpack from the sourced object - collection 

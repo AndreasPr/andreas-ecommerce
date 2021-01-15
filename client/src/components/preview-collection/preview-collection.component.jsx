@@ -1,8 +1,6 @@
 import React from 'react';
-//import './preview-collection.styles.scss';
 import { withRouter } from 'react-router-dom';
 import CollectionItem from '../collection-item/collection-item.component';
-// import {CollectionPreviewContainer, CollectionPreviewTitle, CollectionPreviewMain} from './preview-collection.styles';
 import './preview-collection.styles.css';
 
 // Tip:  => () is an implicit return equivalent to => { return () }

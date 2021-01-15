@@ -1,10 +1,8 @@
 import React from 'react';
 import './aboutus.styles.css';
 import Testimonials from '../../components/testimonials/testimonials.component';
-import modelAbout from '../../assets/aboutmodel.jpg';
 
 const AboutusPage = () => {
-    
     return(
         <div>
             <div className="aboutUsBanner">About Us</div>
@@ -24,7 +22,7 @@ const AboutusPage = () => {
                         <hr className="lines"/>
                         <div className="row">
                             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
-                                <img src={modelAbout} className="img-fluid" alt="model-about"/>
+                                <img src="https://i.ibb.co/dMSyd47/aboutmodel.jpg" className="img-fluid" alt="aboutmodel"/>
                             </div>
                             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
                                 <p className="whoweare-subtitle">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
@@ -119,8 +117,6 @@ const AboutusPage = () => {
                 <hr className="lines"/>
                 <Testimonials />
             </div>
-            
-
         </div>
     );
 };

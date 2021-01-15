@@ -5,19 +5,15 @@ import {GlobalStyle} from './global.styles';
 import ErrorBoundary from './components/error-boundary/error-boundary.component';
 import ScrollToTop from './scrollToTop';
 
-
 import TopNav from './components/top-nav/top-nav.component';
 import Header from './components/header/header.component';
-// import AppBreadcrumbs from './components/breadcrumbs/breadcrumbs.component';
 import Spinner from './components/spinner/spinner.component';
 import Footer from './components/footer/footer.component';
-
 
 import {connect} from 'react-redux';
 import {selectCurrentUser} from './redux/user/user.selectors';
 import {createStructuredSelector} from 'reselect';
 import {checkUserSession} from './redux/user/user.actions';
-
 
 //Code Splitting - React Lazy and Suspense - Different chunks for every import, so we improved performance
 const Homepage = lazy(() => import('./pages/homepage/homepage.component'));
@@ -26,30 +22,6 @@ const Contact = lazy(() => import('./pages/contact/contact.component'));
 const AboutusPage = lazy(() => import('./pages/aboutus/aboutus.component'));
 const SignInAndSignUpPage = lazy(() => import('./pages/sign-in-sign-up/sign-in-sign-up.component'));
 const CheckoutPage = lazy(() => import('./pages/checkout/checkout.component'));
-
-
-// const Separator = ({children, ...props}) => (
-//   <span style={{color: 'teal'}} {...props}>
-//     {children}
-//   </span>
-// );
-
-// const selections = {
-//   icons: {
-//     Home: MdHome,
-//     Shop: MdShop,
-//     Checkout: MdCheck,
-//     Contact: MdContactMail,
-//     SignIn: MdAccountCircle
-//   },
-//   routesList: [
-//     {to: '/', label: 'Home'},
-//     {to: '/shop', label: 'Shop'},
-//     {to: '/checkout', label: 'Checkout'},
-//     {to: '/contact', label: 'Contact'},
-//     {to: '/signin', label: 'Login'}
-//   ]
-// }
 
 const App = ({checkUserSession, currentUser}) => {
 
@@ -66,20 +38,7 @@ const App = ({checkUserSession, currentUser}) => {
         <TopNav />
         <Header />
         <ScrollToTop />
-        {/* <AppBreadcrumbs separator={<Separator>/</Separator>}>
-          {
-            selections.routesList.map( ({to, label}) => {
-              const Icon = selections.icons[label];
-                return(
-                  <div key={to} className="breadcrumb-custom">
-                    {Icon && <Icon />}
-                    <Link to={to}>{label}</Link>
-                  </div>
-                )
-            }
-            )
-          }
-        </AppBreadcrumbs> */}
+
         <Switch>
           <ErrorBoundary>
             <Suspense fallback={<Spinner />}>
