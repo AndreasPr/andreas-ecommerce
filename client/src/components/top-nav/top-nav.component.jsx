@@ -34,9 +34,9 @@ return(
                         <button  className="btn btn-secondary dropdown-toggle languageLink" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {t('button.language')} </button>
                         <div className="dropdown-menu" aria-labelledby="dropdown09">
-                            <a className="dropdown-item" href={() => false} onClick={() => i18n.changeLanguage('en')}>
+                            <a className="dropdown-item" onClick={() => i18n.changeLanguage('en')}>
                                 <ReactCountryFlag countryCode="US" svg />English</a>
-                            <a className="dropdown-item" href={() => false} onClick={() => i18n.changeLanguage('es')}>
+                            <a className="dropdown-item" onClick={() => i18n.changeLanguage('es')}>
                                 <ReactCountryFlag countryCode="ES" svg />Spanish</a>
                         </div>
                     </div>
