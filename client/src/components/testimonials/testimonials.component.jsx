@@ -7,7 +7,7 @@ const Testimonials = () => {
         return (
             <Carousel showArrows={true} infiniteLoop={true} showThumbs={false} showStatus={false} autoPlay={true} interval={6100}>
                 <div>
-                    <img src="https://i.ibb.co/mBGQjNS/testimonial1.png" alt="testimonial1"/>
+                    <img src="https://i.ibb.co/Zzd9tw7/testimonial1.webp" alt="testimonial1"/>
                     <div className="myCarousel">
                         <h3>Michelle Ant</h3>
                         <h4>Web Developer</h4>
@@ -17,7 +17,7 @@ const Testimonials = () => {
                     </div>
                 </div>
                 <div>
-                    <img src="https://i.ibb.co/px9Q7qp/testimonial2.png" alt="testimonial2"/>
+                    <img src="https://i.ibb.co/j3mLGC7/testimonial2.webp" alt="testimonial2"/>
                     <div className="myCarousel">
                         <h3>Stephanie Lincoln</h3>
                         <h4>Cashier</h4>
