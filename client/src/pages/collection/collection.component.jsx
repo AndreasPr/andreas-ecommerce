@@ -8,7 +8,6 @@ import {connect} from 'react-redux';
 const CollectionPage = ({match, collection}) => {
     // Destructuring Assignment, which on the left-hand side of the assignment we define what 
     // values to unpack from the sourced object - collection 
-    console.log("Collection",collection);
     const {title, items, itemNameRoute} = collection;
     return(    
         <div className="container-fluid collectionPageContainer">
