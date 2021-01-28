@@ -60,10 +60,10 @@ const CollectionItemPage = ({collectionItem, match, location, addItem }) => {
                     </div>
                     <div className="shareContainer">
                         <span className="shareTitle">Share: </span>
-                        <a href="https://www.facebook.com/"><i className="fab fa-facebook-square"></i></a> 
-                        <a href="https://www.instagram.com/"><i className="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/"><i className="fab fa-linkedin"></i></a>
-                        <a href="https://pinterest.com/"><i className="fab fa-pinterest"></i></a>
+                        <a href="https://www.facebook.com/"><i className="fa fa-facebook-square"></i></a> 
+                        <a href="https://www.instagram.com/"><i className="fa fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/"><i className="fa fa-linkedin"></i></a>
+                        <a href="https://pinterest.com/"><i className="fa fa-pinterest"></i></a>
                     </div>
                     
                     

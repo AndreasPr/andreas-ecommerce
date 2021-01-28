@@ -15,18 +15,18 @@ return(
         <div className="container-fluid">
             <div className="row">
                 <div className="col-6 col-sm-6 col-md-4 col-lg-3 ml-lg-auto col-xl-3 text-right email"> 
-                    <i className="fas fa-envelope"></i> testemail@gmail.com
+                    <i className="fa fa-envelope"></i> testemail@gmail.com
                 </div>
 
                 <div className="col-4 col-sm-4 col-md-3 mr-md-auto col-lg-3 mr-lg-auto col-xl-3 mr-xl-auto text-left telephone"> 
-                    <i className="fas fa-phone-volume"></i><a className="telephoneLink" href="tel:123-456-7890">+1234567890</a>
+                    <i className="fa fa-phone"></i><a className="telephoneLink" href="tel:123-456-7890">+1234567890</a>
                 </div>
 
                 <div className="col-md-2 col-lg-2 col-xl-3 text-right social-media"> 
-                    <a href="https://www.facebook.com/"><i className="fab fa-facebook-square"></i></a> 
-                    <a href="https://www.instagram.com/"><i className="fab fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/"><i className="fab fa-linkedin"></i></a>
-                    <a href="https://pinterest.com/"><i className="fab fa-pinterest"></i></a>
+                    <a href="https://www.facebook.com/"><i className="fa fa-facebook-square"></i></a> 
+                    <a href="https://www.instagram.com/"><i className="fa fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/"><i className="fa fa-linkedin"></i></a>
+                    <a href="https://pinterest.com/"><i className="fa fa-pinterest"></i></a>
                 </div>
 
                 <div className="col-md-2 col-lg-2 col-xl-2 text-left language"> 
