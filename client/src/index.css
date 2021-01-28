@@ -10,7 +10,7 @@ body {
   font-family: 'Mulish';
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: block;
   src: url('./fonts/mulish-v3-vietnamese_latin-regular.eot'); /* IE9 Compat Modes */
   src: local(''),
       url('./fonts/mulish-v3-vietnamese_latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
