@@ -17,7 +17,7 @@ const Header = ({currentUser, hidden, signOutStart}) => {
 
     return (
         <nav className="navbar navbar-expand-md navbar-dark" >
-            <Link to="/" className="navbar-brand"><img src={mainLogo} alt="logo"/></Link>
+            <Link to="/" className="navbar-brand"><img src={mainLogo} alt="logo" width="200px" height="80px"/></Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
