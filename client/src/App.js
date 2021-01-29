@@ -3,10 +3,6 @@ import {Switch, Route, Redirect} from 'react-router-dom';
 import {GlobalStyle} from './global.styles';
 import ErrorBoundary from './components/error-boundary/error-boundary.component';
 import ScrollToTop from './scrollToTop';
-
-// import TopNav from './components/top-nav/top-nav.component';
-// import Header from './components/header/header.component';
-// import Footer from './components/footer/footer.component';
 import Spinner from './components/spinner/spinner.component';
 
 import {connect} from 'react-redux';
@@ -37,7 +33,6 @@ const App = ({checkUserSession, currentUser}) => {
 
     return (
       <div>
-
         <GlobalStyle/>
         <Suspense fallback={<div />}>
           <TopNav />
@@ -61,8 +56,6 @@ const App = ({checkUserSession, currentUser}) => {
         <Suspense fallback={<div />}>
           <Footer />
         </Suspense>
-
-
       </div>
     ); 
 };
