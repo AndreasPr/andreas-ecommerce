@@ -3,6 +3,11 @@ import './collection-item.styles.css';
 import {connect} from 'react-redux';
 import {selectCollectionItem} from '../../redux/shop/shop.selectors';
 import {addItem} from '../../redux/cart/cart.actions';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFacebook } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faPinterest } from '@fortawesome/free-brands-svg-icons';
 
 const CollectionItemPage = ({collectionItem, match, location, addItem }) => {
 
@@ -60,10 +65,10 @@ const CollectionItemPage = ({collectionItem, match, location, addItem }) => {
                     </div>
                     <div className="shareContainer">
                         <span className="shareTitle">Share: </span>
-                        <a href="https://www.facebook.com/"><i className="fa fa-facebook-square"></i></a> 
-                        <a href="https://www.instagram.com/"><i className="fa fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/"><i className="fa fa-linkedin"></i></a>
-                        <a href="https://pinterest.com/"><i className="fa fa-pinterest"></i></a>
+                        <a href="https://www.facebook.com/"><FontAwesomeIcon icon={faFacebook} /></a> 
+                        <a href="https://www.instagram.com/"><FontAwesomeIcon icon={faInstagram} /></a>
+                        <a href="https://www.linkedin.com/"><FontAwesomeIcon icon={faLinkedin} /></a>
+                        <a href="https://pinterest.com/"><FontAwesomeIcon icon={faPinterest} /></a>
                     </div>
                     
                     

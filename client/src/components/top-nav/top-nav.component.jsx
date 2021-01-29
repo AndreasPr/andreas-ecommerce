@@ -8,6 +8,15 @@ import CartIcon from '../cart-icon/cart-icon.component';
 import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 import {useTranslation} from 'react-i18next';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFacebook } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faPinterest } from '@fortawesome/free-brands-svg-icons';
+
+import { faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+
 const TopNav = ({hidden}) => {
     const [t, i18n] = useTranslation('common');
 return(
@@ -15,18 +24,18 @@ return(
         <div className="container-fluid">
             <div className="row">
                 <div className="col-6 col-sm-6 col-md-4 col-lg-3 ml-lg-auto col-xl-3 text-right email"> 
-                    <i className="fa fa-envelope"></i> testemail@gmail.com
+                <FontAwesomeIcon icon={faEnvelope} /> testemail@gmail.com
                 </div>
 
                 <div className="col-4 col-sm-4 col-md-3 mr-md-auto col-lg-3 mr-lg-auto col-xl-3 mr-xl-auto text-left telephone"> 
-                    <i className="fa fa-phone"></i><a className="telephoneLink" href="tel:123-456-7890">+1234567890</a>
+                    <FontAwesomeIcon icon={faPhone} /><a className="telephoneLink" href="tel:123-456-7890">+1234567890</a>
                 </div>
 
                 <div className="col-md-2 col-lg-2 col-xl-3 text-right social-media"> 
-                    <a href="https://www.facebook.com/"><i className="fa fa-facebook-square"></i></a> 
-                    <a href="https://www.instagram.com/"><i className="fa fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/"><i className="fa fa-linkedin"></i></a>
-                    <a href="https://pinterest.com/"><i className="fa fa-pinterest"></i></a>
+                    <a href="https://www.facebook.com/"><FontAwesomeIcon icon={faFacebook} /></a> 
+                    <a href="https://www.instagram.com/"><FontAwesomeIcon icon={faInstagram} /></a>
+                    <a href="https://www.linkedin.com/"><FontAwesomeIcon icon={faLinkedin} /></a>
+                    <a href="https://pinterest.com/"><FontAwesomeIcon icon={faPinterest} /></a>
                 </div>
 
                 <div className="col-md-2 col-lg-2 col-xl-2 text-left language"> 
