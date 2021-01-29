@@ -1,13 +1,14 @@
-import React, {useState, useCallback, useEffect} from 'react';
+import React, {useState, useCallback, useEffect, lazy} from 'react';
 import './checkout.styles.css';
 import {connect} from 'react-redux';
 import {createStructuredSelector} from 'reselect';
 import {selectCartItems, selectCartTotal} from '../../redux/cart/cart.selectors';
 import CheckoutItem from '../../components/checkout-item/checkout-item.component';
 import StripeCheckoutButton from '../../components/stripe-button/stripe-button.component';
-import PaypalButton from '../../components/paypal-button/paypal-button.component';
+// import PaypalButton from '../../components/paypal-button/paypal-button.component';
 import SuccessfulMessage from '../../components/successful-message/successful-message.component';
 import {useTranslation} from 'react-i18next';
+const PaypalButton = lazy(() => import('../../components/paypal-button/paypal-button.component'));
 
 const CheckoutPage = ({cartItems, total}) => {
     const [visibility, setVisibility] = useState(false);
