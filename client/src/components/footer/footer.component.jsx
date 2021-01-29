@@ -30,7 +30,7 @@ return(
             </div>
             <div className="row infoForFooter">
                 <div className="col-sm-12 col-md-12 col-lg-6 col-xl-2 ml-xl-auto">
-                    <img src={mainLogo} alt="logo" />
+                    <img src={mainLogo} alt="logo" width="200px" height="80px"/>
                     <p>{t('footer.contact_details.address')}: 12345, Test Road, New York</p>
                     <p>{t('footer.contact_details.phone')}: 1234567890</p>
                     <p>{t('footer.contact_details.email')}: testemail@gmail.com</p>
