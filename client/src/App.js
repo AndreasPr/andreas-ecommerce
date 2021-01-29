@@ -6,8 +6,9 @@ import ScrollToTop from './scrollToTop';
 
 // import TopNav from './components/top-nav/top-nav.component';
 // import Header from './components/header/header.component';
-import Spinner from './components/spinner/spinner.component';
 // import Footer from './components/footer/footer.component';
+import Spinner from './components/spinner/spinner.component';
+
 import {connect} from 'react-redux';
 import {selectCurrentUser} from './redux/user/user.selectors';
 import {createStructuredSelector} from 'reselect';
