@@ -4,11 +4,10 @@ import {GlobalStyle} from './global.styles';
 import ErrorBoundary from './components/error-boundary/error-boundary.component';
 import ScrollToTop from './scrollToTop';
 
-import TopNav from './components/top-nav/top-nav.component';
-import Header from './components/header/header.component';
+// import TopNav from './components/top-nav/top-nav.component';
+// import Header from './components/header/header.component';
 import Spinner from './components/spinner/spinner.component';
-import Footer from './components/footer/footer.component';
-
+// import Footer from './components/footer/footer.component';
 import {connect} from 'react-redux';
 import {selectCurrentUser} from './redux/user/user.selectors';
 import {createStructuredSelector} from 'reselect';
@@ -22,6 +21,10 @@ const AboutusPage = lazy(() => import('./pages/aboutus/aboutus.component'));
 const SignInAndSignUpPage = lazy(() => import('./pages/sign-in-sign-up/sign-in-sign-up.component'));
 const CheckoutPage = lazy(() => import('./pages/checkout/checkout.component'));
 
+const TopNav = lazy(() => import('./components/top-nav/top-nav.component'));
+const Header = lazy(() => import('./components/header/header.component'));
+const Footer = lazy(() => import('./components/footer/footer.component'));
+
 const App = ({checkUserSession, currentUser}) => {
 
   // We include the checkUserSession in the array because it is a property function that is being passed in from mapDispatchToProps and
@@ -33,9 +36,12 @@ const App = ({checkUserSession, currentUser}) => {
 
     return (
       <div>
+
         <GlobalStyle/>
-        <TopNav />
-        <Header />
+        <Suspense fallback={<div />}>
+          <TopNav />
+          <Header />
+        </Suspense>
         <ScrollToTop />
 
         <Switch>
@@ -51,7 +57,11 @@ const App = ({checkUserSession, currentUser}) => {
             </Suspense>
           </ErrorBoundary>
         </Switch>
-        <Footer />
+        <Suspense fallback={<div />}>
+          <Footer />
+        </Suspense>
+
+
       </div>
     ); 
 };
