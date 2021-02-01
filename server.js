@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const compression = require('compression');
 const enforce = require('express-sslify');
+const mongoose = require('mongoose');
 
 if(process.env.NODE_ENV !== 'production'){
     require('dotenv').config();
@@ -30,8 +31,25 @@ if(process.env.NODE_ENV === 'production'){
     app.get('*', function(request, response){
         response.sendFile(path.join(__dirname, 'client/build', 'index.html'))
     });
-
 }
+
+const uri = process.env.ATLAS_URI;
+mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true});
+
+const connection = mongoose.connection;
+connection.once('open', () => {
+    console.log("Mongoose database connection established successfully");
+});
+
+const contactRouter = require('./routes/contact');
+const collectionsRouter = require('./routes/collections');
+const usersRouter = require('./routes/users');
+const subscriptionsRouter = require('./routes/subscriptions');
+app.use('/contact', contactRouter);
+app.use('/', subscriptionsRouter);
+app.use('/', collectionsRouter);
+app.use('/signin', usersRouter);
+
 
 app.listen(port, error => {
     if(error){
