@@ -26,6 +26,7 @@ It is created by using Create React App, State Management, Styling, Routers, Fun
 * Progressive Web Application (PWA)
 * Express.js – Node.js Server
 * Firebase - Firestore
+* NoSQL - MongoDB
 * CSS
 * Styled Components
 * Bootstrap 4
