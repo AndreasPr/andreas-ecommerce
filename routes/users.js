@@ -5,11 +5,12 @@ router.route('/').post((req, res) => {
 
     const displayName = req.body.displayName;
     const email = req.body.email;
+    const password = req.body.password;
 
-    const newUser = new User({displayName, email});
+    const newUser = new User({displayName, email, password});
 
     newUser.save()
-    .then(() => res.json('User saved!!!'))
+    .then(() => res.json('User saved in mongodb'))
     .catch((error) => res.status(400).json('Error: ' + error))
 });
 

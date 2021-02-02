@@ -2,6 +2,7 @@ import {takeLatest, put, all, call} from 'redux-saga/effects';
 import {UserActionTypes} from './user.types';
 import {auth, googleProvider, createUserProfileDocument, getCurrentUser} from '../../firebase/firebase.utils';
 import {signInSuccess, signInFailure, signOutSuccess, signOutFailure, signUpSuccess, signUpFailure} from './user.actions';
+import axios from 'axios';
 
 export function* getSnapshotFromUserAuth(userAuth, additionalData){
     try{
@@ -54,10 +55,20 @@ export function* signOut(){
 };
 
 
-
 export function* signUp({payload: {displayName, email, password}}){
     try{
         const {user} = yield auth.createUserWithEmailAndPassword(email, password);
+
+        //MongoDB Insertion
+        const information = {
+            displayName,
+            email,
+            password
+        }
+        yield axios.post('http://localhost:5000/signin', information)
+        .then(() => console.log("User saved!"))
+        .catch(error => console.log("Error in post: ", error));
+
         yield put(signUpSuccess({user, additionalData: {displayName} }));
     }catch(error){
         yield put(signUpFailure(error));

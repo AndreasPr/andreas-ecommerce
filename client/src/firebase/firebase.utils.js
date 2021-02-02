@@ -84,15 +84,33 @@ export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => 
     return await batch.commit();
 };
 
-export const convertCollectionsSnapshotToMap = (collections) => {
-    const transformedCollection = collections.docs.map(doc => {
-        const {title, items} = doc.data();
+// export const convertCollectionsSnapshotToMap = (collections) => {
+//     const transformedCollection = collections.docs.map(doc => {
+//         const {title, items} = doc.data();
+//         return {
+//             routeName: encodeURI(title.toLowerCase()),
+//             itemNameRoute: encodeURI(items.map(item => item.name)),
+//             id: doc.id,
+//             title,
+//             items
+//         }
+//     });
+    
+//     return transformedCollection.reduce((accumulator, collection) => {
+//         accumulator[collection.title.toLowerCase()] = collection; 
+//         return accumulator;
+//     }, {});
+// };
+
+
+export const convertCollectionsSnapshotToMapAxios = (collections) => {
+    const transformedCollection = collections.map(doc => {        
         return {
-            routeName: encodeURI(title.toLowerCase()),
-            itemNameRoute: encodeURI(items.map(item => item.name)),
-            id: doc.id,
-            title,
-            items
+            routeName: encodeURI(doc.title.toLowerCase()),
+            itemNameRoute: encodeURI(doc.items.map(item => item.name)),
+            id: doc._id,
+            title: doc.title,
+            items: doc.items
         }
     });
     
@@ -101,16 +119,6 @@ export const convertCollectionsSnapshotToMap = (collections) => {
         return accumulator;
     }, {});
 };
-
-// export const returnTheDocument = (documentItem, nameOfItem) => {
-//         let result;
-//         documentItem.forEach(doc => {
-//             result =  doc.data().items.filter(item => item.name === nameOfItem)[0]; 
-//         });
-//         return {
-//             result
-//         }
-// };
 
 export const getCurrentUser = () => {
     return new Promise((resolve, reject) => {

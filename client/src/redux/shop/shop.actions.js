@@ -1,5 +1,5 @@
 import ShopActionTypes from './shop.types';
-import {firestore, convertCollectionsSnapshotToMap} from '../../firebase/firebase.utils';
+// import {firestore, convertCollectionsSnapshotToMap} from '../../firebase/firebase.utils';
 
 // Redux Thunk does not care about action objects (for example: fetchCollectionsFailure), instead 
 // it is going to catch the fetchCollectionsStartAsync because return a function. And as soon as redux thunk
@@ -24,20 +24,20 @@ export const fetchCollectionsFailure = (errorMessage) => ({
 });
 
 //This is the actual function that we pass into components to begin this process, in case we use Redux Thunk
-export const fetchCollectionsStartAsync = () => {
-    // Return the function that gets a dispatch
-    return dispatch => {
-        const collectionRef = firestore.collection('collections');
+// export const fetchCollectionsStartAsync = () => {
+//     // Return the function that gets a dispatch
+//     return dispatch => {
+//         const collectionRef = firestore.collection('collections');
 
-        //Because of redux-thunk library, we are dispatching the moment that this function gets called 
-        dispatch(fetchCollectionsStart());
+//         //Because of redux-thunk library, we are dispatching the moment that this function gets called 
+//         dispatch(fetchCollectionsStart());
 
-        // Begins the Asynchronous request...
-        collectionRef.get().then(snapShot => {
-            const collectionsMap = convertCollectionsSnapshotToMap(snapShot);
+//         // Begins the Asynchronous request...
+//         collectionRef.get().then(snapShot => {
+//             const collectionsMap = convertCollectionsSnapshotToMap(snapShot);
 
-            // Dispatch this success once this asynchronous request resolved 
-            dispatch(fetchCollectionsSuccess(collectionsMap));
-        }).catch(error => dispatch(fetchCollectionsFailure(error.message)));
-    };
-};
+//             // Dispatch this success once this asynchronous request resolved 
+//             dispatch(fetchCollectionsSuccess(collectionsMap));
+//         }).catch(error => dispatch(fetchCollectionsFailure(error.message)));
+//     };
+// };
