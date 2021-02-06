@@ -1,7 +1,7 @@
 import {takeLatest, put, all, call} from 'redux-saga/effects';
 import {ContactTypes} from './contact.types';
 import {contactSuccess, contactFailure} from './contact.actions';
-import {addContactInfo} from '../../firebase/firebase.utils';
+// import {addContactInfo} from '../../firebase/firebase.utils';
 import axios from 'axios';
 
 export function* contactMessage({payload: {firstname, lastname, email, message}}){
