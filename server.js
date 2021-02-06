@@ -45,19 +45,13 @@ const contactRouter = require('./routes/contact');
 const collectionsRouter = require('./routes/collections');
 const usersRouter = require('./routes/users');
 const subscriptionsRouter = require('./routes/subscriptions');
+
+// const API_ENDPOINT = 'http://localhost:3000' || 'https://andreas-ecommerce.herokuapp.com';
+
 app.use('/contact', contactRouter);
 app.use('/', subscriptionsRouter);
 app.use('/shop', collectionsRouter);
 app.use('/signin', usersRouter);
-
-const API_ENDPOINT = process.env.REACT_APP_ENDPOINT;
-if(process.env.NODE_ENV === 'production'){
-    app.use(`${API_ENDPOINT}/contact`, contactRouter);
-    app.use(`${API_ENDPOINT}/`, subscriptionsRouter);
-    app.use(`${API_ENDPOINT}/shop`, collectionsRouter);
-    app.use(`${API_ENDPOINT}/signin`, usersRouter);
-}
-
 
 app.listen(port, error => {
     if(error){
