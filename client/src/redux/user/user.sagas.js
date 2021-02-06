@@ -65,7 +65,7 @@ export function* signUp({payload: {displayName, email, password}}){
             email,
             password
         }
-        yield axios.post('/signin', information)
+        yield axios.post('http://localhost:3000/signin' || 'https://andreas-ecommerce.herokuapp.com/signin', information)
         .then(() => console.log("User saved!"))
         .catch(error => console.log("Error in post: ", error));
 
