@@ -50,7 +50,6 @@ app.use('/', subscriptionsRouter);
 app.use('/shop', collectionsRouter);
 app.use('/signin', usersRouter);
 
-
 app.listen(port, error => {
     if(error){
         throw error;

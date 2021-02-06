@@ -65,7 +65,7 @@ export function* signUp({payload: {displayName, email, password}}){
             email,
             password
         }
-        yield axios.post('http://localhost:5000/signin', information)
+        yield axios.post('/signin', information)
         .then(() => console.log("User saved!"))
         .catch(error => console.log("Error in post: ", error));
 
