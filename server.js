@@ -46,8 +46,6 @@ const collectionsRouter = require('./routes/collections');
 const usersRouter = require('./routes/users');
 const subscriptionsRouter = require('./routes/subscriptions');
 
-// const API_ENDPOINT = 'http://localhost:3000' || 'https://andreas-ecommerce.herokuapp.com';
-
 app.use('/contact', contactRouter);
 app.use('/', subscriptionsRouter);
 app.use('/shop', collectionsRouter);

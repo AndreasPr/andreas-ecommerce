@@ -28,6 +28,20 @@ export function* signInWithGoogle(){
 };
 export function* signInWithEmail({payload: {email, password}}){
     try{
+
+
+        //-----MongoDB Sign In Email
+        const emailAndPassword = {
+            email,
+            password
+        }
+        yield axios.post('http://localhost:3000/signin' || 'https://andreas-ecommerce.herokuapp.com/signin', emailAndPassword)
+        .then((res) => {console.log(res.data.user[0]); console.log("Token: ",res.data.token)})
+        .catch(error => {throw error});
+        //-----MongoDB Sign In Email
+
+
+
         const {user} = yield auth.signInWithEmailAndPassword(email, password);
         yield getSnapshotFromUserAuth(user);
     }catch(error){
@@ -59,7 +73,9 @@ export function* signUp({payload: {displayName, email, password}}){
     try{
         const {user} = yield auth.createUserWithEmailAndPassword(email, password);
 
-        //MongoDB Insertion
+
+
+        //-----MongoDB Insertion
         const information = {
             displayName,
             email,
@@ -68,6 +84,10 @@ export function* signUp({payload: {displayName, email, password}}){
         yield axios.post('http://localhost:3000/signin' || 'https://andreas-ecommerce.herokuapp.com/signin', information)
         .then(() => console.log("User saved!"))
         .catch(error => console.log("Error in post: ", error));
+        //-----MongoDB Insertion
+
+
+
 
         yield put(signUpSuccess({user, additionalData: {displayName} }));
     }catch(error){

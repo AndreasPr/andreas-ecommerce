@@ -42,47 +42,47 @@ export const createUserProfileDocument = async(userAuth, additionalData) => {
     return userRef;
 };
 
-export const addContactInfo = async (infoToAdd) => {
-    try{
-        const contactRef = firestore.collection("contact").doc();
-        await contactRef.set(infoToAdd);
-    }catch(error){
-        console.log("Error creating the data in contact: ", error.message);
-    }
-};
+// export const addContactInfo = async (infoToAdd) => {
+//     try{
+//         const contactRef = firestore.collection("contact").doc();
+//         await contactRef.set(infoToAdd);
+//     }catch(error){
+//         console.log("Error creating the data in contact: ", error.message);
+//     }
+// };
 
 
-export const addSubscription = async (emailAdd) => {
-    const valuesOfObjects = Object.values(emailAdd);
-    try{
-        const subscriptionsRef = firestore.collection("subscriptions");
-        const subscriptions = firestore.collection("subscriptions").where('email', '==', valuesOfObjects[0]);
-        subscriptions.get().then(async function(querySnapshot) {
-            if(querySnapshot.empty){
-		        await subscriptionsRef.doc().set({email: valuesOfObjects[0]});
-                alert("Thank you for your subscription!");
-            }
-            else{
-                querySnapshot.forEach(function(doc) {
-                    alert("Email already exists! Please try a different email.");
-                });
-            }
-        })
-    }catch(error){
-        console.log("Error creating the data in subscriptions: ", error.message);
-    }
-};
+// export const addSubscription = async (emailAdd) => {
+//     const valuesOfObjects = Object.values(emailAdd);
+//     try{
+//         const subscriptionsRef = firestore.collection("subscriptions");
+//         const subscriptions = firestore.collection("subscriptions").where('email', '==', valuesOfObjects[0]);
+//         subscriptions.get().then(async function(querySnapshot) {
+//             if(querySnapshot.empty){
+// 		        await subscriptionsRef.doc().set({email: valuesOfObjects[0]});
+//                 alert("Thank you for your subscription!");
+//             }
+//             else{
+//                 querySnapshot.forEach(function(doc) {
+//                     alert("Email already exists! Please try a different email.");
+//                 });
+//             }
+//         })
+//     }catch(error){
+//         console.log("Error creating the data in subscriptions: ", error.message);
+//     }
+// };
 
 
-export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => {
-    const collectionRef = firestore.collection(collectionKey);
-    const batch = firestore.batch();
-    objectsToAdd.forEach(obj => {
-        const newDocRef = collectionRef.doc();
-        batch.set(newDocRef, obj);
-    });
-    return await batch.commit();
-};
+// export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => {
+//     const collectionRef = firestore.collection(collectionKey);
+//     const batch = firestore.batch();
+//     objectsToAdd.forEach(obj => {
+//         const newDocRef = collectionRef.doc();
+//         batch.set(newDocRef, obj);
+//     });
+//     return await batch.commit();
+// };
 
 // export const convertCollectionsSnapshotToMap = (collections) => {
 //     const transformedCollection = collections.docs.map(doc => {
