@@ -16,7 +16,7 @@ export function* contactMessage({payload: {firstname, lastname, email, message}}
             email,
             message
         }
-        axios.post('http://localhost:3000/contact' || 'https://andreas-ecommerce.herokuapp.com/contact', info)
+        axios.post('/contact', info)
         .then(res => console.log(res.data));
         
         yield put(contactSuccess({info}));
