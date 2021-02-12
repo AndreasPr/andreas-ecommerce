@@ -21,9 +21,12 @@ export function* fetchCollectionsAsync(){
 
         
         //Fetch collections from the url endpoint and conversion to Map - MongoDB
-        const resultAxios = yield axios.get('/shop');
-        const collectionsMapAxios = yield call(convertCollectionsSnapshotToMapAxios, resultAxios.data);
+        const resultAxios = yield axios.get('/shop').then(function(response){
+            return response.data;
+        });
 
+        const collectionsMapAxios = yield call(convertCollectionsSnapshotToMapAxios, resultAxios);
+        
         // Put create an action in Saga - Output an object that it is expecting to have a type and payload
         yield put(fetchCollectionsSuccess(collectionsMapAxios));
     }catch(error){
