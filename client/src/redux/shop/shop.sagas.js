@@ -4,7 +4,7 @@ import {convertCollectionsSnapshotToMapAxios} from '../../firebase/firebase.util
 import {fetchCollectionsSuccess, fetchCollectionsFailure} from './shop.actions';
 import axios from 'axios';
 
-// Asynchronous logic of redux-saga
+// Asynchronous logic of Redux-Saga
 export function* fetchCollectionsAsync(){
 
     // const collectionRef = firestore.collection('collections');
