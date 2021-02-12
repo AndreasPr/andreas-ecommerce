@@ -19,7 +19,7 @@ export function* fetchCollectionsAsync(){
         // the saga middleware
         // const collectionsMap = yield call(convertCollectionsSnapshotToMap, snapShot);  
 
-        
+        console.log(window.location.href); 
         //Fetch collections from the url endpoint and conversion to Map - MongoDB
         const resultAxios = yield axios.get('/shop').then(response => {
             return response.data;
