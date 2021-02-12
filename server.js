@@ -23,15 +23,6 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors()); // Stand for: cross origin request. The web server is being hosted from some origin(like a port ex. 5000 in development), our application
 // is hosted to 3000. When the front end makes a request to our backend, cors checks to make sure the origin is the same, 
 // otherwise it denies the request, so it is a safety feature 
-if(process.env.NODE_ENV === 'production'){
-    app.use(compression());
-    app.use(enforce.HTTPS({trustProtoHeader: true}));
-    app.use(express.static(path.join(__dirname, 'client/build')));
-
-    app.get('*', function(request, response){
-        response.sendFile(path.join(__dirname, 'client/build', 'index.html'))
-    });
-}
 
 const uri = process.env.ATLAS_URI;
 mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true});
@@ -39,14 +30,6 @@ mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true});
 const connection = mongoose.connection;
 connection.once('open', () => {
     console.log("Mongoose database connection established successfully");
-});
-
-
-app.listen(port, error => {
-    if(error){
-        throw error;
-    }
-    console.log('Server is running on the port ' + port);
 });
 
 const contactRouter = require('./routes/contact');
@@ -58,6 +41,24 @@ app.use('/contact', contactRouter);
 app.use('/', subscriptionsRouter);
 app.use('/api/shop', collectionsRouter);
 app.use('/signin', usersRouter);
+
+
+if(process.env.NODE_ENV === 'production'){
+    app.use(compression());
+    app.use(enforce.HTTPS({trustProtoHeader: true}));
+    app.use(express.static(path.join(__dirname, 'client/build')));
+
+    app.get('*', function(request, response){
+        response.sendFile(path.join(__dirname, 'client/build', 'index.html'))
+    });
+}
+
+app.listen(port, error => {
+    if(error){
+        throw error;
+    }
+    console.log('Server is running on the port ' + port);
+});
 
 app.get('/service-worker.js', (req, res) => {
     res.sendfile(path.resolve(__dirname, '..', 'build', 'service-worker.js'));
