@@ -42,14 +42,18 @@ app.use('/api/', subscriptionsRouter);
 app.use('/api/shop', collectionsRouter);
 app.use('/api/signin', usersRouter);
 
-app.get('/service-worker.js', (req, res) => {
-    res.sendfile(path.resolve(__dirname, '..', 'build', 'service-worker.js'));
-});
+// app.get('/service-worker.js', (req, res) => {
+//     res.sendfile(path.resolve(__dirname, '..', 'build', 'service-worker.js'));
+// });
 
 if(process.env.NODE_ENV === 'production'){
     app.use(compression());
     app.use(enforce.HTTPS({trustProtoHeader: true}));
     app.use(express.static(path.join(__dirname, 'client/build')));
+
+    app.get('./service-worker.js', (req, res) => {
+        res.sendfile(path.resolve(__dirname, '..', 'build', 'service-worker.js'));
+    });
 
     app.get('*', function(request, response){
         response.sendFile(path.join(__dirname, 'client/build', 'index.html'))
