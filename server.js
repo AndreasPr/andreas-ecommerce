@@ -37,10 +37,10 @@ const collectionsRouter = require('./routes/collections');
 const usersRouter = require('./routes/users');
 const subscriptionsRouter = require('./routes/subscriptions');
 
-app.use('/contact', contactRouter);
-app.use('/', subscriptionsRouter);
+app.use('/api/contact', contactRouter);
+app.use('/api/', subscriptionsRouter);
 app.use('/api/shop', collectionsRouter);
-app.use('/signin', usersRouter);
+app.use('/api/signin', usersRouter);
 
 
 if(process.env.NODE_ENV === 'production'){

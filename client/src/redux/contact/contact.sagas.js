@@ -16,7 +16,7 @@ export function* contactMessage({payload: {firstname, lastname, email, message}}
             email,
             message
         }
-        axios.post('/contact', info)
+        axios.post('/api/contact', info)
         .then(res => console.log(res.data));
         
         yield put(contactSuccess({info}));

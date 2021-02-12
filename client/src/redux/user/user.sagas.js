@@ -35,7 +35,7 @@ export function* signInWithEmail({payload: {email, password}}){
             email,
             password
         }
-        yield axios.post('/signin', emailAndPassword)
+        yield axios.post('/api/signin', emailAndPassword)
         .then((res) => {console.log(res.data.user[0]); console.log("Token: ",res.data.token)})
         .catch(error => {throw error});
         //-----MongoDB Sign In Email
@@ -81,7 +81,7 @@ export function* signUp({payload: {displayName, email, password}}){
             email,
             password
         }
-        yield axios.post('/signin', information)
+        yield axios.post('/api/signin', information)
         .then(() => console.log("User saved!"))
         .catch(error => console.log("Error in post: ", error));
         //-----MongoDB Insertion
