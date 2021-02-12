@@ -3,9 +3,9 @@ import ShopActionTypes from './shop.types';
 import {convertCollectionsSnapshotToMapAxios} from '../../firebase/firebase.utils';
 import {fetchCollectionsSuccess, fetchCollectionsFailure} from './shop.actions';
 import axios from 'axios';
-const axiosInstance = axios.create({
-    baseURL: process.env.BASE_URL || 'http://localhost:3000'
-});
+// const axiosInstance = axios.create({
+//     baseURL: process.env.BASE_URL || 'http://localhost:3000'
+// });
 
 // Asynchronous logic of Redux-Saga
 export function* fetchCollectionsAsync(){
@@ -23,13 +23,15 @@ export function* fetchCollectionsAsync(){
         // const collectionsMap = yield call(convertCollectionsSnapshotToMap, snapShot);  
 
         //Fetch collections from the url endpoint and conversion to Map - MongoDB
-        // const resultAxios = yield axios.get('/shop').then(response => {
-        //     return response.data;
-        // });
+        const resultAxios = yield axios.get('/shop')
+        .then(response => {
+            return response.data;
+        })
+        .catch(err => console.log(err));
 
-        const resultAxios = yield call(axiosInstance.get, '/shop');
+        // const resultAxios = yield call(axiosInstance.get, '/shop');
 
-        const collectionsMapAxios = yield call(convertCollectionsSnapshotToMapAxios, resultAxios.data);
+        const collectionsMapAxios = yield call(convertCollectionsSnapshotToMapAxios, resultAxios);
         
         // Put create an action in Saga - Output an object that it is expecting to have a type and payload
         yield put(fetchCollectionsSuccess(collectionsMapAxios));

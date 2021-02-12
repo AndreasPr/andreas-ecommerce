@@ -41,6 +41,14 @@ connection.once('open', () => {
     console.log("Mongoose database connection established successfully");
 });
 
+
+app.listen(port, error => {
+    if(error){
+        throw error;
+    }
+    console.log('Server is running on the port ' + port);
+});
+
 const contactRouter = require('./routes/contact');
 const collectionsRouter = require('./routes/collections');
 const usersRouter = require('./routes/users');
@@ -50,13 +58,6 @@ app.use('/contact', contactRouter);
 app.use('/', subscriptionsRouter);
 app.use('/shop', collectionsRouter);
 app.use('/signin', usersRouter);
-
-app.listen(port, error => {
-    if(error){
-        throw error;
-    }
-    console.log('Server is running on the port ' + port);
-});
 
 app.get('/service-worker.js', (req, res) => {
     res.sendfile(path.resolve(__dirname, '..', 'build', 'service-worker.js'));
