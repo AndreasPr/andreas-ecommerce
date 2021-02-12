@@ -3,6 +3,9 @@ import ShopActionTypes from './shop.types';
 import {convertCollectionsSnapshotToMapAxios} from '../../firebase/firebase.utils';
 import {fetchCollectionsSuccess, fetchCollectionsFailure} from './shop.actions';
 import axios from 'axios';
+const axiosInstance = axios.create({
+    baseURL: process.env.BASE_URL || 'http://localhost:3000'
+});
 
 // Asynchronous logic of Redux-Saga
 export function* fetchCollectionsAsync(){
@@ -24,8 +27,7 @@ export function* fetchCollectionsAsync(){
         //     return response.data;
         // });
 
-        const resultAxios = yield call(axios.get, '/shop');
-        console.log(resultAxios.data);
+        const resultAxios = yield call(axiosInstance.get, '/shop');
 
         const collectionsMapAxios = yield call(convertCollectionsSnapshotToMapAxios, resultAxios.data);
         
