@@ -53,6 +53,10 @@ if(process.env.NODE_ENV === 'production'){
     });
 }
 
+app.get('/service-worker.js', (req, res) => {
+    res.sendfile(path.resolve(__dirname, '..', 'build', 'service-worker.js'));
+});
+
 app.listen(port, error => {
     if(error){
         throw error;
@@ -60,9 +64,6 @@ app.listen(port, error => {
     console.log('Server is running on the port ' + port);
 });
 
-app.get('/service-worker.js', (req, res) => {
-    res.sendfile(path.resolve(__dirname, '..', 'build', 'service-worker.js'));
-});
 
 app.post('/payment', (request, response) => {
     const body = {
