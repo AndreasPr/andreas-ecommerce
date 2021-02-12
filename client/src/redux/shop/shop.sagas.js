@@ -21,7 +21,7 @@ export function* fetchCollectionsAsync(){
 
         
         //Fetch collections from the url endpoint and conversion to Map - MongoDB
-        const resultAxios = yield axios.get('/shop').then(function(response){
+        const resultAxios = yield axios.get('/shop').then(response => {
             return response.data;
         });
 
