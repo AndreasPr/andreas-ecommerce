@@ -56,7 +56,7 @@ const subscriptionsRouter = require('./routes/subscriptions');
 
 app.use('/contact', contactRouter);
 app.use('/', subscriptionsRouter);
-app.use('/shop', collectionsRouter);
+app.use('/api/shop', collectionsRouter);
 app.use('/signin', usersRouter);
 
 app.get('/service-worker.js', (req, res) => {
