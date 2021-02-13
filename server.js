@@ -49,7 +49,7 @@ if(process.env.NODE_ENV === 'production'){
 
 
     app.get("/service-worker.js", (req, res) => {
-        res.sendFile(path.resolve(__dirname, '..', "public", "service-worker.js"));
+        res.sendFile(path.resolve(__dirname, "client/build", "serviceWorker.js"));
     });
 
 
