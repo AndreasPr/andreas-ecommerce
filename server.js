@@ -47,10 +47,6 @@ if(process.env.NODE_ENV === 'production'){
     app.use(enforce.HTTPS({trustProtoHeader: true}));
     app.use(express.static(path.join(__dirname, 'client/build')));
 
-    app.get("/service-worker.js", (req, res) => {
-        res.sendFile(path.resolve(__dirname, "public", "service-worker.js"));
-      });
-
     app.get('*', function(request, response){
         response.sendFile(path.join(__dirname, 'client/build', 'index.html'))
     });
@@ -63,9 +59,9 @@ app.listen(port, error => {
     console.log('Server is running on the port ' + port);
 });
 
-app.get('/service-worker.js', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '..', 'build', 'service-worker.js'));
-});
+// app.get('/service-worker.js', (req, res) => {
+//     res.sendFile(path.resolve(__dirname, '..', 'build', 'service-worker.js'));
+// });
 
 app.post('/payment', (request, response) => {
     const body = {
