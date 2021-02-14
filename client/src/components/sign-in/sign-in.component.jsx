@@ -42,7 +42,7 @@ const SignIn  = ({emailSignInStart, googleSignInStart}) => {
                         handleChange={handleChange} />
                     <SignInButtons>
                         <CustomButton type='submit'>{t('signin.login.signin')}</CustomButton>
-                        <CustomButton type='button' onClick={googleSignInStart} isGoogleSignIn>Google</CustomButton>
+                        {/* <CustomButton type='button' onClick={googleSignInStart} isGoogleSignIn>Google</CustomButton> */}
                     </SignInButtons>
                 </form>
             </SignInContainer>
