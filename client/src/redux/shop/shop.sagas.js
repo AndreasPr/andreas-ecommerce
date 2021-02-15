@@ -1,6 +1,6 @@
 import {takeLatest, call, put, all} from 'redux-saga/effects';
 import ShopActionTypes from './shop.types';
-import {convertCollectionsSnapshotToMapAxios} from '../../firebase/firebase.utils';
+import {convertCollectionsSnapshotToMapAxios} from '../../database/db.utils';
 import {fetchCollectionsSuccess, fetchCollectionsFailure} from './shop.actions';
 import axios from 'axios';
 
