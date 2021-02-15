@@ -3,8 +3,9 @@ import axios from 'axios';
 
 export const addSubscriptionEmail = (emailToAdd) => {
     // const result = addSubscription(emailToAdd);
-    const result = axios.post('/', emailToAdd)
-    .then(res => alert("Thank you for your subscription!"));
+    const result = axios.post('/api/subscription', emailToAdd)
+    .then(res => alert("Thank you for your subscription!"))
+    .catch(err => console.log("Error!!!: ", err));
 
     return result;
 }

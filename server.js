@@ -38,7 +38,7 @@ const usersRouter = require('./routes/users');
 const subscriptionsRouter = require('./routes/subscriptions');
 
 app.use('/api/contact', contactRouter);
-app.use('/api/', subscriptionsRouter);
+app.use('/api/subscription', subscriptionsRouter);
 app.use('/api/shop', collectionsRouter);
 app.use('/api/signin', usersRouter);
 
