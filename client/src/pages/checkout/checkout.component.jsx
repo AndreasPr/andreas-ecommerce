@@ -5,7 +5,6 @@ import {createStructuredSelector} from 'reselect';
 import {selectCartItems, selectCartTotal} from '../../redux/cart/cart.selectors';
 import CheckoutItem from '../../components/checkout-item/checkout-item.component';
 import StripeCheckoutButton from '../../components/stripe-button/stripe-button.component';
-// import PaypalButton from '../../components/paypal-button/paypal-button.component';
 import SuccessfulMessage from '../../components/successful-message/successful-message.component';
 import {useTranslation} from 'react-i18next';
 const PaypalButton = lazy(() => import('../../components/paypal-button/paypal-button.component'));
@@ -61,7 +60,7 @@ const CheckoutPage = ({cartItems, total}) => {
         <div className="row">
             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 paypalButton">
                 <div className="paypalContainer">
-                <PaypalButton price={total} />
+                <PaypalButton price={total} onSuccessPayment={onSuccessPayment}/>
                 </div>
             </div>
         </div>
