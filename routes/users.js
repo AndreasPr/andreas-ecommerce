@@ -87,13 +87,6 @@ router.route('/').post((req, res) => {
                                 });
                             }
                         );
-                        
-                        // const userId = user[0]._id;
-                        // const token = jwt.sign({userId}, "jwtSecret", {
-                        //     expiresIn: 300
-                        // });
-                        // console.log({user, token: token});
-                        // res.json({user, success: true, token: "Bearer " + token});
                     }
                     else{
                         return res.status(400).json({passwordincorrect: "Password Incorrect!"});

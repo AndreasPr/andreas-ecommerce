@@ -40,7 +40,6 @@ export function* signInWithEmail({payload: {email, password}}){
             email,
             password
         }
-        console.log("emailAndPassword from func: ", emailAndPassword);
         const info =  yield axios.post('/api/signin', emailAndPassword)
         .then((res) => {
             if(res.data.token){
@@ -139,7 +138,6 @@ export function* signUp({payload: {displayName, email, password}}){
         .then((res) =>{console.log("User saved!"); return res.data; })
         .catch(error => console.log("Error in post: ", error));
         //-----MongoDB Insertion
-        console.log("Saved: ",savedData);
         yield put(signUpSuccess({user: savedData, additionalData: {displayName} }));
 
     }catch(error){
@@ -160,7 +158,6 @@ export function* signInAfterSignUp({payload: {user, additionalData}}){
             email,
             password
         }
-        console.log("emailAndPassword consL: ", emailAndPassword);
 
         const info =  yield axios.post('/api/signin', emailAndPassword)
         .then((res) => {
