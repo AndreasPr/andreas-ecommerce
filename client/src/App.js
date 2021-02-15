@@ -10,11 +10,14 @@ import {selectCurrentUser} from './redux/user/user.selectors';
 import {createStructuredSelector} from 'reselect';
 import {checkUserSession} from './redux/user/user.actions';
 
-import TopNav from './components/top-nav/top-nav.component';
-import Header from './components/header/header.component';
-import Footer from './components/footer/footer.component';
+// import TopNav from './components/top-nav/top-nav.component';
+// import Header from './components/header/header.component';
+// import Footer from './components/footer/footer.component';
 
 //Code Splitting - React Lazy and Suspense - Different chunks for every import, so we improved performance
+const TopNav = lazy(() => import('./components/top-nav/top-nav.component'));
+const Header = lazy(() => import('./components/header/header.component'));
+const Footer = lazy(() => import('./components/footer/footer.component'));
 const Homepage = lazy(() => import('./pages/homepage/homepage.component'));
 const ShopPage = lazy(() => import('./pages/shop/shop.component'));
 const Contact = lazy(() => import('./pages/contact/contact.component'));
