@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import mainLogo  from '../../assets/andreas.webp';
+import mainLogo  from '../../assets/andreas.png';
 import {connect} from 'react-redux';
 // import CartIcon from '../cart-icon/cart-icon.component';
 // import CartDropdown from '../cart-dropdown/cart-dropdown.component';

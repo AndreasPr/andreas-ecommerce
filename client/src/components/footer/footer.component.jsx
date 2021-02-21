@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import './footer.styles.css';
-import mainLogo  from '../../assets/andreas.webp';
+import mainLogo  from '../../assets/andreas.png';
 // import {ReactComponent as ArmourLogo}  from '../../assets/armour-logo.svg';
 // import {ReactComponent as CoachLogo}  from '../../assets/coach-logo.svg';
 // import {ReactComponent as GapLogo}  from '../../assets/gap-logo.svg';
