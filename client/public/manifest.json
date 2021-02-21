@@ -8,14 +8,14 @@
       "type": "image/x-icon"
     },
     {
-      "src": "andreas maskable_icon_x192.jpg",
-      "type": "image/jpg",
+      "src": "andreas maskable_icon_x192.png",
+      "type": "image/png",
       "sizes": "192x192",
       "purpose": "maskable"
     },
     {
-      "src": "andreas_ecom-512x512.jpg",
-      "type": "image/jpg",
+      "src": "andreas_ecom-512x512.png",
+      "type": "image/png",
       "sizes": "512x512"
     }
   ],
