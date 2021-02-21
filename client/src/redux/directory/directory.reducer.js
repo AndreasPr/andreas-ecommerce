@@ -8,13 +8,13 @@ const INITIAL_STATE = {
         },
         {
           title: 'jackets',
-          imageUrl: 'https://i.ibb.co/9snvvqj/main-jackets.jpg',
+          imageUrl: 'https://i.ibb.co/Zd84FL3/main-jacket.jpg',
           id: 2,
           linkUrl: 'shop/jackets'
         },
         {
           title: 'sneakers',
-          imageUrl: 'https://i.ibb.co/HHQBbDJ/main-sneakers.jpg',
+          imageUrl: 'https://i.ibb.co/XJyH71v/main-sneakers.jpg',
           id: 3,
           linkUrl: 'shop/sneakers'
         },
