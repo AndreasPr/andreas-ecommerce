@@ -31,6 +31,13 @@ const INITIAL_STATE = {
           size: 'large',
           id: 5,
           linkUrl: 'shop/mens'
+        },
+        {
+          title: 'shoes',
+          imageUrl: 'https://i.ibb.co/Gp4QMM3/main-shoes.jpg',
+          size: 'large',
+          id: 6,
+          linkUrl: 'shop/shoes'
         }
       ] 
 };
