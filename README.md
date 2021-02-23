@@ -44,7 +44,7 @@ It is created by using Create React App, State Management, Styling, Routers, Fun
 ![photo4](https://github.com/AndreasPr/andreas-ecommerce/blob/master/photo4.PNG)
 ![photo5](https://github.com/AndreasPr/andreas-ecommerce/blob/master/photo5.PNG)
 ![photo6](https://github.com/AndreasPr/andreas-ecommerce/blob/master/photo6.PNG)
-![photo7](https://github.com/AndreasPr/andreas-ecommerce/blob/master/photo7.PNG)
+
 ## Scope of functionalities
 * Responsive Design
 * Checkout Page
