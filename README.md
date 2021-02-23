@@ -35,6 +35,7 @@ It is created by using Create React App, State Management, Styling, Routers, Fun
 * EmailJS
 * Npm Package Manager
 * Continuous integration - CircleCI
+* JSON Web Token (JWT)
 
 ## Screenshots
 ![photo1](https://github.com/AndreasPr/andreas-ecommerce/blob/master/photo1.PNG)
