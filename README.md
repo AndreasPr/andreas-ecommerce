@@ -49,6 +49,7 @@ It is created by using Create React App (CRA), React Redux - State Management, S
 * Responsive Design
 * Checkout Page
 * Shopping Cart
+* Pagination
 * Online Payments via Stripe
 * List of different clothing collections
 * Product page
