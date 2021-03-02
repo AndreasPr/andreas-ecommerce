@@ -3,7 +3,7 @@
 # Andreas Ecommerce 
 (https://andreas-ecommerce.herokuapp.com/)
 
-Ecommerce Single-page Application created with React, Node.js and Firebase.  
+Ecommerce Single-page Application created with React, Node.js and MongoDB.  
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Screenshots](#screenshots)
@@ -11,7 +11,7 @@ Ecommerce Single-page Application created with React, Node.js and Firebase.
 * [Project Status](#project-status)
 
 ## General info
-It is created by using Create React App, State Management, Styling, Routers, Functional Components, Hooks and bootstrapping sample data in order to present the features of the ecommerce application and, in parallel, it is implemented the Stripe API and the PayPal to achieve online payments. 
+It is created by using Create React App (CRA), React Redux - State Management, Styled Components, Routers, Functional Components, Hooks and bootstrapping sample data in order to present the features of the ecommerce application and, in parallel, it is implemented the Stripe API and the PayPal to achieve online payments. 
 ## Technologies
 * React JS
 * Single-page Application (SPA)
