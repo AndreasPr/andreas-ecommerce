@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './collection.styles.css';
-//import { useLocation } from 'react-router-dom'
 import CollectionItem from '../../components/collection-item/collection-item.component';
 import {selectCollection} from '../../redux/shop/shop.selectors';
 import {connect} from 'react-redux';
+import ReactPaginate from 'react-paginate';
 
 const CollectionPage = ({match, collection}) => {
     // Destructuring Assignment, which on the left-hand side of the assignment we define what 
@@ -11,16 +11,31 @@ const CollectionPage = ({match, collection}) => {
     const {title, items, itemNameRoute} = collection;
 
     const [isDisplayedProducts, setIsDisplayedProducts] = useState(items);
+    const [offset, setOffset] = useState(0);
+    const [data, setData] = useState([]);
+    const [perPage] = useState(4);
+    const [pageCount, setPageCount] = useState(0);
 
     const handleChange = (event) => {
         let searchQuery = event.target.value.toLowerCase();
         let displayedProducts = items.filter(function(el){
             let searchValue = el.name.toLowerCase();
-            
             return searchValue.indexOf(searchQuery) !== -1;
         });
         setIsDisplayedProducts(displayedProducts);
     };
+
+    const handlePageClick = (e) => {
+        const selectedPage = e.selected;
+        setOffset(selectedPage + 1)
+    };
+
+    useEffect(() => {
+        const data = isDisplayedProducts;
+        const slice = data.slice(offset, offset + perPage);
+        setData(slice);
+        setPageCount(Math.ceil(data.length / perPage));
+    }, [offset, isDisplayedProducts])
 
     return(    
         <div className="container-fluid collectionPageContainer">
@@ -39,9 +54,9 @@ const CollectionPage = ({match, collection}) => {
             
             <div className="row">
                 {
-                    isDisplayedProducts 
+                    data.length >= 1 
                     ? 
-                    isDisplayedProducts
+                    data
                     .map((displayProduct) => 
                         (
                             <div key={displayProduct.id} className="col-12 d-flex justify-content-center col-sm-6 col-md-6 col-lg-4 col-xl-3 collectionPageProducts">
@@ -50,15 +65,35 @@ const CollectionPage = ({match, collection}) => {
                         )
                     )
                     :
-                    items
-                    .map((item) => 
-                        (
-                            <div key={item.id} className="col-12 d-flex justify-content-center col-sm-6 col-md-6 col-lg-4 col-xl-3 collectionPageProducts">
-                                <CollectionItem key={item.id} item={item} title={title} itemNameRoute={itemNameRoute}/>
-                            </div>
-                        )
-                    )
+                    <div className="col-12 d-flex justify-content-center col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                    No products!   
+                    </div>
+                    // items
+                    // .map((item) => 
+                    //     (
+                    //         <div key={item.id} className="col-12 d-flex justify-content-center col-sm-6 col-md-6 col-lg-4 col-xl-3 collectionPageProducts">
+                    //             <CollectionItem key={item.id} item={item} title={title} itemNameRoute={itemNameRoute}/>
+                    //         </div>
+                    //     )
+                    // )
+                    
                 }
+            </div>
+            <div className="row">
+                <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 paginationContainerDiv">
+                <ReactPaginate
+                    previousLabel={"prev"}
+                    nextLabel={"next"}
+                    breakLabel={"..."}
+                    breakClassName={"break-me"}
+                    pageCount={pageCount}
+                    marginPagesDisplayed={2}
+                    pageRangeDisplayed={0}
+                    onPageChange={handlePageClick}
+                    containerClassName={"pagination"}
+                    subContainerClassName={"pages pagination"}
+                    activeClassName={"active"}/>
+                </div>
             </div>
         </div>
     );
